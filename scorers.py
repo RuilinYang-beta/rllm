@@ -2,6 +2,7 @@ from inspect_ai.solver._task_state import TaskState
 from inspect_ai.scorer._target import Target
 from inspect_ai.scorer._metric import CORRECT, INCORRECT, Score
 from inspect_ai.scorer._scorer import Scorer, scorer 
+from inspect_ai.scorer._metrics import mean, stderr
 
 from utils import str_to_dict
 
@@ -21,7 +22,7 @@ def max_dict_equal(ans: dict, target: dict) -> bool:
     return True
 
 
-@scorer
+@scorer(metrics=[mean(), stderr()])
 def max_dict_match() -> Scorer: 
 
     async def score(state: TaskState, target: Target) -> Score: 
@@ -46,7 +47,7 @@ def cell_match():
     pass 
 
 
-def test(): 
+def max_dict_equal_test(): 
     d1 = str_to_dict("""{'reasoning': '___', 'solution': '{"House 1":{"Name":"Eric","Height":"short","Hobby":"gardening","Food":"pizza","Occupation":"engineer"},"House 2":{"Name":"Arnold","Height":"very short","Hobby":"photography","Food":"grilled cheese","Occupation":"doctor"}}'}""")
     d1_reorder = str_to_dict("""{'reasoning': '___', 'solution': '{"House 1":{"Name":"Eric","Hobby":"gardening","Food":"pizza","Height":"short","Occupation":"engineer"},"House 2":{"Height":"very short","Hobby":"photography","Food":"grilled cheese","Occupation":"doctor","Name":"Arnold"}}'}""")
     
@@ -57,4 +58,4 @@ def test():
 
 
 if __name__ == "__main__":
-    test()
+    max_dict_equal_test()

@@ -3,6 +3,8 @@ from inspect_ai.dataset import Sample
 from inspect_ai.scorer import exact
 from inspect_ai.solver import generate
 from inspect_ai.dataset import FieldSpec, csv_dataset
+
+from scorers import max_dict_match
 from subset_data import SAVE_PATH, DEV_SAVE_PATH
 
 TEMPLATE_ONE_SHOT_PATH = "./prompts/template_one_shot.txt"
@@ -24,9 +26,9 @@ def load_dataset(path: str, template_path: str):
     return csv_dataset(path, record_to_sample)
 
 @task
-def hello_world():
+def naive_cot():
     return Task(
         dataset=load_dataset(DEV_SAVE_PATH, TEMPLATE_ONE_SHOT_PATH),
         solver=[generate()],
-        scorer=exact(),
+        scorer=max_dict_match(),
     )

@@ -1,17 +1,16 @@
 import os
 import pandas as pd
-import json 
-import ast 
+from pprint import pprint 
 from dotenv import load_dotenv
-from pprint import pprint
 from datasets import load_dataset, concatenate_datasets, load_from_disk
+from utils import str_to_dict
 
 PLACEHOLDER = "___"
 # every upgrade of level: 
 # search space -> 2x
 # z3 conflict -> 3x
 TARGET_SIZES = ["2*5", "3*4", "4*5", "5*6"]
-SAMPLE_PER_SIZE = 8
+SAMPLE_PER_SIZE = 5
 SEED = 42
 SAVE_PATH = "./data/small_dataset.csv"
 DEV_SAVE_PATH = "./data/dev_dataset.csv"
@@ -85,9 +84,9 @@ def test(dev=False):
     
     for col in ['solution_inst', 'solution_alt']: 
         value = df[col].iloc[0]
-        parsed = ast.literal_eval(value)
-        parsed["solution"] = json.loads(parsed["solution"])
-        print(json.dumps(parsed, indent=2))
+        parsed = str_to_dict(value)
+
+        pprint(parsed, indent=2)
 
 
 def dev(ds): 
