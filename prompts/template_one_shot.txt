@@ -33,5 +33,11 @@ Each house is occupied by a different person. Each house has a unique attribute 
 $PUZZLE$ 
 
 # Instruction
-Now please solve the above puzzle. Present your reasoning and solution in the following json format:
-$SOLUTION_INST$
+Solve the puzzle above. Respond with a JSON object only — no explanation outside the JSON. Structure your response as in the example solution, specifically:
+
+* The top-level object has keys "reasoning" and "solution".
+* "reasoning" is a string describing your step-by-step logic.
+* "solution" is an object with keys "House 1" through "House N", where N is the number of houses given in the puzzle. 
+* Each house object has exactly these X string fields, where X is the number of characteristics given in the puzzle. 
+
+Do not include markdown formatting, code fences, or any text outside the JSON object.

@@ -11,15 +11,16 @@ def max_dict_equal(ans: dict, target: dict) -> bool:
         if key != "reasoning": 
         
             if key not in ans: 
-                return False 
+                return False, f"Key {key} not in answer" 
 
             v1, v2 = ans[key], target[key]
             if isinstance(v1, dict) and isinstance(v2, dict):
-                if not max_dict_equal(v1, v2):
-                    return False
+                correct, explanation = max_dict_equal(v1, v2)
+                if not correct:
+                    return False, f"Dict mismatch for key `{key}`! {explanation}"
             elif v1 != v2:
-                return False
-    return True
+                return False, f"Value mismatch for key {key}: {v1} != {v2}"
+    return True, None
 
 
 @scorer(metrics=[mean(), stderr()])
@@ -30,14 +31,19 @@ def max_dict_match() -> Scorer:
         ans_dict = str_to_dict(state.output.completion)
         tar_dict = str_to_dict(target.text)
 
-        correct = (
-            "solution" in ans_dict
-            and max_dict_equal(ans_dict, tar_dict)
-        )
-        
+        if "solution" not in ans_dict: 
+            return Score(
+                value = INCORRECT, 
+                answer=state.output.completion, 
+                explanation="Key 'solution' not in answer"
+            )
+        else: 
+            correct, explanation = max_dict_equal(ans_dict, tar_dict)
+
         return Score(
             value = CORRECT if correct else INCORRECT,
-            answer=state.output.completion
+            answer=state.output.completion, 
+            explanation=explanation
         )
 
     return score

@@ -7,10 +7,10 @@ from utils import str_to_dict
 
 PLACEHOLDER = "___"
 # every upgrade of level: 
-# search space -> 2x
-# z3 conflict -> 3x
-TARGET_SIZES = ["2*5", "3*4", "4*5", "5*6"]
-SAMPLE_PER_SIZE = 5
+# search space -> 3, 7, 12, 17
+# z3 conflict -> 5, 16, 48, 97
+TARGET_SIZES = ["3*4", "4*5", "5*6", "6*6"]
+SAMPLE_PER_SIZE = 1
 SEED = 42
 SAVE_PATH = "./data/small_dataset.csv"
 DEV_SAVE_PATH = "./data/dev_dataset.csv"
@@ -95,10 +95,10 @@ def dev(ds):
 
 
 if __name__ == "__main__":
-    # main()
+    main()
 
     # test()
-    test(dev=True)
+    # test(dev=True)
 
 
 

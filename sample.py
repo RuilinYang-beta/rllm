@@ -14,8 +14,12 @@ def load_dataset(path: str, template_path: str):
         template = f.read()
 
     def record_to_sample(record) -> Sample:
-        input_text = template.replace("$PUZZLE$", record["puzzle"]) \
-                            .replace("$SOLUTION_INST$", record["solution_inst"])
+        # input_text = template.replace("$PUZZLE$", record["puzzle"]) \
+        #                     .replace("$SOLUTION_INST$", record["solution_inst"])
+        
+        # no JSON in instruction, just the puzzle:
+        input_text = template.replace("$PUZZLE$", record["puzzle"])
+
         return Sample(
             id=record["id"],
             input=input_text,
@@ -28,7 +32,10 @@ def load_dataset(path: str, template_path: str):
 @task
 def naive_cot():
     return Task(
-        dataset=load_dataset(DEV_SAVE_PATH, TEMPLATE_ONE_SHOT_PATH),
+        # dataset=load_dataset(SAVE_PATH, TEMPLATE_ONE_SHOT_PATH)
+        dataset=load_dataset(SAVE_PATH, TEMPLATE_ONE_SHOT_PATH).filter(
+                lambda sample : sample.metadata["size"] == "6*6"
+            ),
         solver=[generate()],
         scorer=max_dict_match(),
     )

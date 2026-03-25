@@ -1,36 +1,46 @@
 id,size,puzzle,solution,created_at,solution_inst,solution_alt
-lgp-test-2x5-11,2*5,"There are 2 houses, numbered 1 to 2 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
- - Each person has a unique name: `Arnold`, `Eric`
- - People have unique heights: `very short`, `short`
- - Each person has a unique hobby: `gardening`, `photography`
- - Everyone has something unique for lunch: `grilled cheese`, `pizza`
- - Each person has an occupation: `doctor`, `engineer`
+lgp-test-3x4-5,3*4,"There are 3 houses, numbered 1 to 3 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Arnold`, `Eric`, `Peter`
+ - Each person prefers a unique type of vacation: `beach`, `mountain`, `city`
+ - They all have a unique favorite flower: `carnations`, `daffodils`, `lilies`
+ - Each person has a unique birthday month: `april`, `jan`, `sept`
 
 ## Clues:
-1. The person who enjoys gardening is directly left of the person who loves eating grilled cheese.
-2. Eric is directly left of the person who is a doctor.
-3. The person who is very short is not in the first house.
-","{'header': array(['House', 'Name', 'Height', 'Hobby', 'Food', 'Occupation'],
-      dtype=object), 'rows': array([array(['1', 'Eric', 'short', 'gardening', 'pizza', 'engineer'],
-             dtype=object)                                            ,
-       array(['2', 'Arnold', 'very short', 'photography', 'grilled cheese',
-              'doctor'], dtype=object)                                     ],
-      dtype=object)}",2024-07-03T21:21:29.205142,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Height"":""___"",""Hobby"":""___"",""Food"":""___"",""Occupation"":""___""},""House 2"":{""Name"":""___"",""Height"":""___"",""Hobby"":""___"",""Food"":""___"",""Occupation"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Eric"",""Height"":""short"",""Hobby"":""gardening"",""Food"":""pizza"",""Occupation"":""engineer""},""House 2"":{""Name"":""Arnold"",""Height"":""very short"",""Hobby"":""photography"",""Food"":""grilled cheese"",""Occupation"":""doctor""}}'}"
-lgp-test-2x5-24,2*5,"There are 2 houses, numbered 1 to 2 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
- - Each person has a unique name: `Arnold`, `Eric`
- - Each person has a unique level of education: `associate`, `high school`
- - Each mother is accompanied by their child: `Fred`, `Bella`
- - People have unique favorite book genres: `science fiction`, `mystery`
- - Everyone has a favorite smoothie: `cherry`, `desert`
+1. Eric is the person who prefers city breaks.
+2. Peter is the person who loves beach vacations.
+3. Arnold is somewhere to the right of the person who loves a carnations arrangement.
+4. The person whose birthday is in April is the person who loves a bouquet of daffodils.
+5. The person who loves a carnations arrangement is Peter.
+6. The person whose birthday is in September is somewhere to the left of Peter.
+","{'header': array(['House', 'Name', 'Vacation', 'Flower', 'Birthday'], dtype=object), 'rows': array([array(['1', 'Eric', 'city', 'lilies', 'sept'], dtype=object),
+       array(['2', 'Peter', 'beach', 'carnations', 'jan'], dtype=object),
+       array(['3', 'Arnold', 'mountain', 'daffodils', 'april'], dtype=object)],
+      dtype=object)}",2024-07-03T21:21:29.206056,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Vacation"":""___"",""Flower"":""___"",""Birthday"":""___""},""House 2"":{""Name"":""___"",""Vacation"":""___"",""Flower"":""___"",""Birthday"":""___""},""House 3"":{""Name"":""___"",""Vacation"":""___"",""Flower"":""___"",""Birthday"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Eric"",""Vacation"":""city"",""Flower"":""lilies"",""Birthday"":""sept""},""House 2"":{""Name"":""Peter"",""Vacation"":""beach"",""Flower"":""carnations"",""Birthday"":""jan""},""House 3"":{""Name"":""Arnold"",""Vacation"":""mountain"",""Flower"":""daffodils"",""Birthday"":""april""}}'}"
+lgp-test-4x5-23,4*5,"There are 4 houses, numbered 1 to 4 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Peter`, `Eric`, `Arnold`, `Alice`
+ - People have unique favorite music genres: `pop`, `classical`, `jazz`, `rock`
+ - Each person has a unique hobby: `cooking`, `gardening`, `painting`, `photography`
+ - Each person has a unique level of education: `master`, `associate`, `high school`, `bachelor`
+ - Each person has a unique type of pet: `fish`, `bird`, `dog`, `cat`
 
 ## Clues:
-1. The person's child is named Fred is directly left of Arnold.
-2. The person who loves mystery books is not in the second house.
-3. The person with a high school diploma is the person's child is named Bella.
-4. Eric and the Desert smoothie lover are next to each other.
-","{'header': array(['House', 'Name', 'Education', 'Children', 'BookGenre', 'Smoothie'],
-      dtype=object), 'rows': array([array(['1', 'Eric', 'associate', 'Fred', 'mystery', 'cherry'],
-             dtype=object)                                           ,
-       array(['2', 'Arnold', 'high school', 'Bella', 'science fiction', 'desert'],
-             dtype=object)                                                        ],
-      dtype=object)}",2024-07-03T21:21:29.205212,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Education"":""___"",""Children"":""___"",""BookGenre"":""___"",""Smoothie"":""___""},""House 2"":{""Name"":""___"",""Education"":""___"",""Children"":""___"",""BookGenre"":""___"",""Smoothie"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Eric"",""Education"":""associate"",""Children"":""Fred"",""BookGenre"":""mystery"",""Smoothie"":""cherry""},""House 2"":{""Name"":""Arnold"",""Education"":""high school"",""Children"":""Bella"",""BookGenre"":""science fiction"",""Smoothie"":""desert""}}'}"
+1. The person who loves classical music is not in the fourth house.
+2. Arnold is the person with a master's degree.
+3. Alice is the person who owns a dog.
+4. The person who enjoys gardening is not in the third house.
+5. The person with a bachelor's degree is Alice.
+6. Alice is the photography enthusiast.
+7. Arnold is directly left of the person who loves pop music.
+8. The person with an associate's degree is directly left of the photography enthusiast.
+9. The person who loves rock music is the person who loves cooking.
+10. The person with an associate's degree is Eric.
+11. The person who has a cat is the person who loves jazz music.
+12. Arnold is somewhere to the right of the person with an aquarium of fish.
+","{'header': array(['House', 'Name', 'MusicGenre', 'Hobby', 'Education', 'Pet'],
+      dtype=object), 'rows': array([array(['1', 'Eric', 'rock', 'cooking', 'associate', 'fish'], dtype=object),
+       array(['2', 'Alice', 'classical', 'photography', 'bachelor', 'dog'],
+             dtype=object)                                                 ,
+       array(['3', 'Arnold', 'jazz', 'painting', 'master', 'cat'], dtype=object),
+       array(['4', 'Peter', 'pop', 'gardening', 'high school', 'bird'],
+             dtype=object)                                             ],
+      dtype=object)}",2024-07-03T21:21:29.207765,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""MusicGenre"":""___"",""Hobby"":""___"",""Education"":""___"",""Pet"":""___""},""House 2"":{""Name"":""___"",""MusicGenre"":""___"",""Hobby"":""___"",""Education"":""___"",""Pet"":""___""},""House 3"":{""Name"":""___"",""MusicGenre"":""___"",""Hobby"":""___"",""Education"":""___"",""Pet"":""___""},""House 4"":{""Name"":""___"",""MusicGenre"":""___"",""Hobby"":""___"",""Education"":""___"",""Pet"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Eric"",""MusicGenre"":""rock"",""Hobby"":""cooking"",""Education"":""associate"",""Pet"":""fish""},""House 2"":{""Name"":""Alice"",""MusicGenre"":""classical"",""Hobby"":""photography"",""Education"":""bachelor"",""Pet"":""dog""},""House 3"":{""Name"":""Arnold"",""MusicGenre"":""jazz"",""Hobby"":""painting"",""Education"":""master"",""Pet"":""cat""},""House 4"":{""Name"":""Peter"",""MusicGenre"":""pop"",""Hobby"":""gardening"",""Education"":""high school"",""Pet"":""bird""}}'}"
