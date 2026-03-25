@@ -1,0 +1,36 @@
+id,size,puzzle,solution,created_at,solution_inst,solution_alt
+lgp-test-2x5-11,2*5,"There are 2 houses, numbered 1 to 2 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Arnold`, `Eric`
+ - People have unique heights: `very short`, `short`
+ - Each person has a unique hobby: `gardening`, `photography`
+ - Everyone has something unique for lunch: `grilled cheese`, `pizza`
+ - Each person has an occupation: `doctor`, `engineer`
+
+## Clues:
+1. The person who enjoys gardening is directly left of the person who loves eating grilled cheese.
+2. Eric is directly left of the person who is a doctor.
+3. The person who is very short is not in the first house.
+","{'header': array(['House', 'Name', 'Height', 'Hobby', 'Food', 'Occupation'],
+      dtype=object), 'rows': array([array(['1', 'Eric', 'short', 'gardening', 'pizza', 'engineer'],
+             dtype=object)                                            ,
+       array(['2', 'Arnold', 'very short', 'photography', 'grilled cheese',
+              'doctor'], dtype=object)                                     ],
+      dtype=object)}",2024-07-03T21:21:29.205142,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Height"":""___"",""Hobby"":""___"",""Food"":""___"",""Occupation"":""___""},""House 2"":{""Name"":""___"",""Height"":""___"",""Hobby"":""___"",""Food"":""___"",""Occupation"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Eric"",""Height"":""short"",""Hobby"":""gardening"",""Food"":""pizza"",""Occupation"":""engineer""},""House 2"":{""Name"":""Arnold"",""Height"":""very short"",""Hobby"":""photography"",""Food"":""grilled cheese"",""Occupation"":""doctor""}}'}"
+lgp-test-2x5-24,2*5,"There are 2 houses, numbered 1 to 2 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Arnold`, `Eric`
+ - Each person has a unique level of education: `associate`, `high school`
+ - Each mother is accompanied by their child: `Fred`, `Bella`
+ - People have unique favorite book genres: `science fiction`, `mystery`
+ - Everyone has a favorite smoothie: `cherry`, `desert`
+
+## Clues:
+1. The person's child is named Fred is directly left of Arnold.
+2. The person who loves mystery books is not in the second house.
+3. The person with a high school diploma is the person's child is named Bella.
+4. Eric and the Desert smoothie lover are next to each other.
+","{'header': array(['House', 'Name', 'Education', 'Children', 'BookGenre', 'Smoothie'],
+      dtype=object), 'rows': array([array(['1', 'Eric', 'associate', 'Fred', 'mystery', 'cherry'],
+             dtype=object)                                           ,
+       array(['2', 'Arnold', 'high school', 'Bella', 'science fiction', 'desert'],
+             dtype=object)                                                        ],
+      dtype=object)}",2024-07-03T21:21:29.205212,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Education"":""___"",""Children"":""___"",""BookGenre"":""___"",""Smoothie"":""___""},""House 2"":{""Name"":""___"",""Education"":""___"",""Children"":""___"",""BookGenre"":""___"",""Smoothie"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Eric"",""Education"":""associate"",""Children"":""Fred"",""BookGenre"":""mystery"",""Smoothie"":""cherry""},""House 2"":{""Name"":""Arnold"",""Education"":""high school"",""Children"":""Bella"",""BookGenre"":""science fiction"",""Smoothie"":""desert""}}'}"
