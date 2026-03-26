@@ -1,10 +1,13 @@
+import json 
+from inspect_ai.util import subprocess as inspect_subprocess
 
 from clingo import Control, MessageCode
 from utils import Content
+from constants import FEEDBACK_BASE_PATH, ERR_UNSAT, ERR_MULTIMODEL
 
-ERR_UNSAT = "Error: UNSAT."
-ERR_MULTIMODEL = "Error: MultiModels."
-FEEDBACK_BASE_PATH = "feedback_messages/"
+class ClingoSubprocessError(Exception):
+    """Raised when the clingo subprocess itself fails, not due to the ASP program."""
+    pass
 
 def parse_and_ground(program: str) -> tuple[Control | None, str | None]:
     """
@@ -57,16 +60,44 @@ def solve(ctl: Control) -> tuple[bool, str, list | None]:
 
     return correct, error_msg, models
 
-def validate_and_execute(program: str) -> tuple[bool, str, list | None]:
-    """
-    Public interface expected by symbolic_solver.
-    Returns (is_valid, error_msg, atoms).
-    """
-    ctl, error_msg = parse_and_ground(program)
-    if error_msg:
-        return False, error_msg, None
+# def validate_and_execute(program: str) -> tuple[bool, str, list | None]:
+#     """
+#     Public interface expected by symbolic_solver.
+#     Returns (is_valid, error_msg, atoms).
+#     """
+#     ctl, error_msg = parse_and_ground(program)
+#     if error_msg:
+#         return False, error_msg, None
 
-    return solve(ctl)
+#     return solve(ctl)
+
+async def validate_and_execute(program: str) -> tuple[bool, str, list | None]:
+    """
+    Async-safe public interface for symbolic_solver.
+    Runs clingo in a subprocess managed by Inspect's concurrency system.
+    Returns (is_valid, error_msg, models).
+    """
+    try:
+        result = await inspect_subprocess(
+            ["python", "run_clingo.py"],
+            input=program,
+            timeout=30,
+        )
+    except TimeoutError:
+        raise ClingoSubprocessError("Clingo subprocess timed out.")
+
+    if not result.success:
+        raise ClingoSubprocessError(f"Clingo subprocess failed: {result.stderr}")
+
+    try:
+        data = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        raise ClingoSubprocessError(f"Malformed JSON from clingo: {result.stdout!r}")
+
+    if data["ok"]:
+        return True, "", data["models"]
+    else:
+        return False, data["error"], None
 
 
 def make_feedback_message(error_msg: str) -> str:

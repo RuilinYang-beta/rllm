@@ -1,6 +1,30 @@
 import json 
 import ast
 
+from inspect_ai.dataset import Sample
+from inspect_ai.dataset import FieldSpec, csv_dataset
+
+def load_dataset(path: str, template_path: str):
+    with open(template_path, "r") as f:
+        template = f.read()
+
+    def record_to_sample(record) -> Sample:
+        input_text = template.replace("$PUZZLE$", record["puzzle"])
+
+        return Sample(
+            id=record["id"],
+            input=input_text,
+            target=record["solution_alt"],
+            metadata={
+                    "size": record["size"], 
+                    "puzzle": record["puzzle"],
+                    "solution_inst": record["solution_inst"]
+                },
+        )
+
+    return csv_dataset(path, record_to_sample)
+
+
 def str_to_dict(value):
     parsed = ast.literal_eval(value)
 

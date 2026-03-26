@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from pprint import pprint 
 from dotenv import load_dotenv
-from datasets import load_dataset, concatenate_datasets, load_from_disk
+from datasets import load_dataset, concatenate_datasets
 from utils import str_to_dict
 
 """
@@ -17,7 +17,6 @@ TARGET_SIZES = ["3*4", "4*5", "5*6", "6*6"]
 SAMPLE_PER_SIZE = 5
 SEED = 42
 SAVE_PATH = "./data/small_dataset.csv"
-DEV_SAVE_PATH = "./data/dev_dataset.csv"
 
 # add a `solution_inst` and `solution_alt` column 
 # that complies to the format in prompting template

@@ -3,10 +3,10 @@ from inspect_ai.solver import solver
 from inspect_ai.solver._task_state import TaskState
 from inspect_ai.model import ChatMessageUser
 
-from utils_clingo import validate_and_execute, make_feedback_message
+from utils_clingo import validate_and_execute, make_feedback_message, ClingoSubprocessError
 from utils import Content
+from constants import FORMAT_INSTRUCTION_PATH
 
-FORMAT_INSTRUCTION_PATH = "./prompts/format_nesy.txt"
 
 @solver
 def symbolic_solver(max_retries: int = 3):
@@ -21,7 +21,14 @@ def symbolic_solver(max_retries: int = 3):
                 return state
 
             symbolic_output = state.output.completion
-            is_valid, error_msg, result = validate_and_execute(symbolic_output)
+
+            try:
+                is_valid, error_msg, result = await validate_and_execute(symbolic_output)
+            except ClingoSubprocessError as e:
+                # Infrastructure failure — abort immediately, don't retry
+                state.metadata["failed"] = True
+                state.metadata["infra_error"] = str(e)
+                return state
 
             if is_valid:
                 state.metadata["execution_result"] = result[0]
