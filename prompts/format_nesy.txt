@@ -1,0 +1,7 @@
+Convert the output to a JSON object with the following structure: 
+
+* The top-level object has a key "solution".
+* "solution" maps to an object with keys "House 1" through "House N", where N is the number of houses given in the puzzle. 
+* Each of the "House N" keys maps to an object with exactly X attribute-value pairs, where X is the number of attributes per house given in the puzzle. 
+
+Reply with the JSON object only, do not include markdown formatting, code fences, or any text apart from the JSON object.

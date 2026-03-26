@@ -63,7 +63,16 @@ def count_total_cells(d: dict) -> int:
 def max_cell_match() -> Scorer: 
 
     async def score(state: TaskState, target: Target) -> Score: 
-        ans_dict = str_to_dict(state.output.completion)
+        ans_dict = None
+        try: 
+            ans_dict = str_to_dict(state.output.completion)
+        except Exception as e:
+            return Score(
+                value={"table_match": INCORRECT, "cells_match_ratio": 0},
+                answer=state.output.completion, 
+                explanation=f"Answer is not a valid dictionary. Error: {str(e)}"
+            )
+        
         tar_dict = str_to_dict(target.text)
 
         if "solution" not in ans_dict: 

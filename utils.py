@@ -15,7 +15,7 @@ def str_to_dict(value):
 
 
     
-class Feedback(str):
+class Content(str):
     def __new__(cls, path: str, error_msg: str | None = None):
         with open(path, "r") as f:
             content = f.read()
@@ -24,4 +24,3 @@ class Feedback(str):
         return super().__new__(cls, content)
 
 
-    

@@ -1,6 +1,6 @@
 
 from clingo import Control, MessageCode
-from utils import Feedback
+from utils import Content
 
 ERR_UNSAT = "Error: UNSAT."
 ERR_MULTIMODEL = "Error: MultiModels."
@@ -71,14 +71,14 @@ def validate_and_execute(program: str) -> tuple[bool, str, list | None]:
 
 def make_feedback_message(error_msg: str) -> str:
     if "syntax error" in error_msg:
-        return Feedback(f"{FEEDBACK_BASE_PATH}/syntax_error.txt", error_msg)
+        return Content(f"{FEEDBACK_BASE_PATH}/syntax_error.txt", error_msg)
     elif "unsafe" in error_msg:
-        return Feedback(f"{FEEDBACK_BASE_PATH}/unsafe_variable.txt", error_msg)
+        return Content(f"{FEEDBACK_BASE_PATH}/unsafe_variable.txt", error_msg)
     elif "aggregate" in error_msg:
-        return Feedback(f"{FEEDBACK_BASE_PATH}/aggregate_misuse.txt", error_msg)
+        return Content(f"{FEEDBACK_BASE_PATH}/aggregate_misuse.txt", error_msg)
     elif ERR_UNSAT in error_msg:
-        return Feedback(f"{FEEDBACK_BASE_PATH}/err_unsat.txt", error_msg)
+        return Content(f"{FEEDBACK_BASE_PATH}/err_unsat.txt", error_msg)
     elif ERR_MULTIMODEL in error_msg:
-        return Feedback(f"{FEEDBACK_BASE_PATH}/err_multimodel.txt", error_msg)
+        return Content(f"{FEEDBACK_BASE_PATH}/err_multimodel.txt", error_msg)
     else: 
-        return Feedback(f"{FEEDBACK_BASE_PATH}/unknown_error.txt")
+        return Content(f"{FEEDBACK_BASE_PATH}/unknown_error.txt")

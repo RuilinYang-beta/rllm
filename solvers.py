@@ -1,9 +1,12 @@
 from inspect_ai import Task
-from inspect_ai.solver import solver, chain, generate
+from inspect_ai.solver import solver
 from inspect_ai.solver._task_state import TaskState
 from inspect_ai.model import ChatMessageUser
 
 from utils_clingo import validate_and_execute, make_feedback_message
+from utils import Content
+
+FORMAT_INSTRUCTION_PATH = "./prompts/format_nesy.txt"
 
 @solver
 def symbolic_solver(max_retries: int = 3):
@@ -13,7 +16,7 @@ def symbolic_solver(max_retries: int = 3):
         while attempt < max_retries + 1:
             state = await generate(state)
             
-            if state.completed:
+            if state.completed and state.output.stop_reason != "stop":
                 state.metadata["failed"] = True
                 return state
 
@@ -27,7 +30,6 @@ def symbolic_solver(max_retries: int = 3):
                 attempt += 1
                 feedback = make_feedback_message(error_msg)
                 state.messages.append(ChatMessageUser(content=feedback))
-            
 
         # Retries exhausted
         state.metadata["execution_result"] = None
@@ -44,19 +46,17 @@ def format_solver():
             return state
 
         result = state.metadata["execution_result"]
-        # Convert atom list to a readable string for the LLM
-        result_str = "\n".join(str(atom) for atom in result)
+        result_str = f"{'.\n'.join(str(atom) for atom in result)}."
 
         prompt = (
             f"The ASP solver produced the following stable model:\n\n"
             f"{result_str}\n\n"
-            "Convert it to the required output format."
+            f"{Content(FORMAT_INSTRUCTION_PATH)}"
         )
+
         state.messages.append(ChatMessageUser(content=prompt))
         state = await generate(state)
 
-        if state.completed:
-            state.metadata["failed"] = True
 
         return state
 

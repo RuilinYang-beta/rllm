@@ -38,6 +38,6 @@ Solve the puzzle above. Respond with a JSON object only — no explanation outsi
 * The top-level object has keys "reasoning" and "solution".
 * "reasoning" is a brief explanation of the key deductions
 * "solution" is an object with keys "House 1" through "House N", where N is the number of houses given in the puzzle. 
-* Each house object has exactly these X string fields, where X is the number of characteristics given in the puzzle. 
+* Each house object has exactly X string fields, where X is the number of characteristics per house given in the puzzle. 
 
 Do not include markdown formatting, code fences, or any text outside the JSON object.
