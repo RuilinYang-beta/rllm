@@ -36,7 +36,7 @@ $PUZZLE$
 Solve the puzzle above. Respond with a JSON object only — no explanation outside the JSON. Structure your response as in the example solution, specifically:
 
 * The top-level object has keys "reasoning" and "solution".
-* "reasoning" is a string describing your step-by-step logic.
+* "reasoning" is a brief explanation of the key deductions
 * "solution" is an object with keys "House 1" through "House N", where N is the number of houses given in the puzzle. 
 * Each house object has exactly these X string fields, where X is the number of characteristics given in the puzzle. 
 

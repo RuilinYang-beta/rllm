@@ -5,12 +5,16 @@ from dotenv import load_dotenv
 from datasets import load_dataset, concatenate_datasets, load_from_disk
 from utils import str_to_dict
 
+"""
+This script load the original dataset from HuggingFace, sample a small subset of it, and save the subset to a local CSV file.
+"""
+
 PLACEHOLDER = "___"
 # every upgrade of level: 
 # search space -> 3, 7, 12, 17
 # z3 conflict -> 5, 16, 48, 97
 TARGET_SIZES = ["3*4", "4*5", "5*6", "6*6"]
-SAMPLE_PER_SIZE = 1
+SAMPLE_PER_SIZE = 5
 SEED = 42
 SAVE_PATH = "./data/small_dataset.csv"
 DEV_SAVE_PATH = "./data/dev_dataset.csv"
@@ -64,21 +68,15 @@ def main():
 
     small_dataset = small_dataset.map(process_solution)
 
-    dev(small_dataset)
-
     small_dataset.to_csv(SAVE_PATH, index=False)
 
     # small_dataset.save_to_disk(SAVE_PATH)
     print(f"Saved {len(small_dataset)} rows to {SAVE_PATH}")
 
 
-def test(dev=False):
-    if dev: 
-        path = DEV_SAVE_PATH
-    else: 
-        path = SAVE_PATH
+def test():
 
-    df = pd.read_csv(path)
+    df = pd.read_csv(SAVE_PATH)
 
     print(df['solution'].iloc[0])
     
@@ -89,16 +87,10 @@ def test(dev=False):
         pprint(parsed, indent=2)
 
 
-def dev(ds): 
-    dev_dataset = ds.select(range(2))
-    dev_dataset.to_csv(DEV_SAVE_PATH, index=False)
-
-
 if __name__ == "__main__":
-    main()
+    # main()
 
-    # test()
-    # test(dev=True)
+    test()
 
 
 

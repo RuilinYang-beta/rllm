@@ -16,6 +16,79 @@ lgp-test-3x4-5,3*4,"There are 3 houses, numbered 1 to 3 from left to right, as s
        array(['2', 'Peter', 'beach', 'carnations', 'jan'], dtype=object),
        array(['3', 'Arnold', 'mountain', 'daffodils', 'april'], dtype=object)],
       dtype=object)}",2024-07-03T21:21:29.206056,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Vacation"":""___"",""Flower"":""___"",""Birthday"":""___""},""House 2"":{""Name"":""___"",""Vacation"":""___"",""Flower"":""___"",""Birthday"":""___""},""House 3"":{""Name"":""___"",""Vacation"":""___"",""Flower"":""___"",""Birthday"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Eric"",""Vacation"":""city"",""Flower"":""lilies"",""Birthday"":""sept""},""House 2"":{""Name"":""Peter"",""Vacation"":""beach"",""Flower"":""carnations"",""Birthday"":""jan""},""House 3"":{""Name"":""Arnold"",""Vacation"":""mountain"",""Flower"":""daffodils"",""Birthday"":""april""}}'}"
+lgp-test-3x4-31,3*4,"There are 3 houses, numbered 1 to 3 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Arnold`, `Peter`, `Eric`
+ - People have unique favorite book genres: `romance`, `mystery`, `science fiction`
+ - Each person has a unique birthday month: `sept`, `april`, `jan`
+ - The people are of nationalities: `brit`, `dane`, `swede`
+
+## Clues:
+1. Arnold is the person who loves mystery books.
+2. Peter is directly left of the person who loves romance books.
+3. Peter is somewhere to the left of the person who loves mystery books.
+4. The person whose birthday is in April is somewhere to the right of the person whose birthday is in January.
+5. The person whose birthday is in September is the Swedish person.
+6. The Dane is in the third house.
+7. The person who loves science fiction books is the person whose birthday is in September.
+","{'header': array(['House', 'Name', 'BookGenre', 'Birthday', 'Nationality'],
+      dtype=object), 'rows': array([array(['1', 'Peter', 'science fiction', 'sept', 'swede'], dtype=object),
+       array(['2', 'Eric', 'romance', 'jan', 'brit'], dtype=object),
+       array(['3', 'Arnold', 'mystery', 'april', 'dane'], dtype=object)],
+      dtype=object)}",2024-07-03T21:21:29.206211,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""BookGenre"":""___"",""Birthday"":""___"",""Nationality"":""___""},""House 2"":{""Name"":""___"",""BookGenre"":""___"",""Birthday"":""___"",""Nationality"":""___""},""House 3"":{""Name"":""___"",""BookGenre"":""___"",""Birthday"":""___"",""Nationality"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Peter"",""BookGenre"":""science fiction"",""Birthday"":""sept"",""Nationality"":""swede""},""House 2"":{""Name"":""Eric"",""BookGenre"":""romance"",""Birthday"":""jan"",""Nationality"":""brit""},""House 3"":{""Name"":""Arnold"",""BookGenre"":""mystery"",""Birthday"":""april"",""Nationality"":""dane""}}'}"
+lgp-test-3x4-1,3*4,"There are 3 houses, numbered 1 to 3 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Arnold`, `Peter`, `Eric`
+ - The people keep unique animals: `horse`, `bird`, `cat`
+ - Everyone has a unique favorite cigar: `pall mall`, `blue master`, `prince`
+ - The mothers' names in different houses are unique: `Aniya`, `Holly`, `Janelle`
+
+## Clues:
+1. The bird keeper is somewhere to the left of Eric.
+2. The bird keeper is directly left of the Prince smoker.
+3. The person partial to Pall Mall is Arnold.
+4. Eric is not in the third house.
+5. The person partial to Pall Mall is the cat lover.
+6. The person whose mother's name is Aniya is the bird keeper.
+7. The person whose mother's name is Janelle is not in the second house.
+","{'header': array(['House', 'Name', 'Animal', 'Cigar', 'Mother'], dtype=object), 'rows': array([array(['1', 'Peter', 'bird', 'blue master', 'Aniya'], dtype=object),
+       array(['2', 'Eric', 'horse', 'prince', 'Holly'], dtype=object),
+       array(['3', 'Arnold', 'cat', 'pall mall', 'Janelle'], dtype=object)],
+      dtype=object)}",2024-07-03T21:21:29.206002,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Animal"":""___"",""Cigar"":""___"",""Mother"":""___""},""House 2"":{""Name"":""___"",""Animal"":""___"",""Cigar"":""___"",""Mother"":""___""},""House 3"":{""Name"":""___"",""Animal"":""___"",""Cigar"":""___"",""Mother"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Peter"",""Animal"":""bird"",""Cigar"":""blue master"",""Mother"":""Aniya""},""House 2"":{""Name"":""Eric"",""Animal"":""horse"",""Cigar"":""prince"",""Mother"":""Holly""},""House 3"":{""Name"":""Arnold"",""Animal"":""cat"",""Cigar"":""pall mall"",""Mother"":""Janelle""}}'}"
+lgp-test-3x4-0,3*4,"There are 3 houses, numbered 1 to 3 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Arnold`, `Peter`, `Eric`
+ - The people are of nationalities: `dane`, `swede`, `brit`
+ - The people keep unique animals: `bird`, `horse`, `cat`
+ - People have unique favorite book genres: `romance`, `science fiction`, `mystery`
+
+## Clues:
+1. The bird keeper is somewhere to the left of the person who keeps horses.
+2. The Swedish person is in the first house.
+3. The British person is in the second house.
+4. The cat lover is in the second house.
+5. The person who loves science fiction books is directly left of Eric.
+6. The person who loves mystery books is in the third house.
+7. The person who loves romance books is Peter.
+","{'header': array(['House', 'Name', 'Nationality', 'Animal', 'BookGenre'],
+      dtype=object), 'rows': array([array(['1', 'Peter', 'swede', 'bird', 'romance'], dtype=object),
+       array(['2', 'Arnold', 'brit', 'cat', 'science fiction'], dtype=object),
+       array(['3', 'Eric', 'dane', 'horse', 'mystery'], dtype=object)],
+      dtype=object)}",2024-07-03T21:21:29.205995,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Nationality"":""___"",""Animal"":""___"",""BookGenre"":""___""},""House 2"":{""Name"":""___"",""Nationality"":""___"",""Animal"":""___"",""BookGenre"":""___""},""House 3"":{""Name"":""___"",""Nationality"":""___"",""Animal"":""___"",""BookGenre"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Peter"",""Nationality"":""swede"",""Animal"":""bird"",""BookGenre"":""romance""},""House 2"":{""Name"":""Arnold"",""Nationality"":""brit"",""Animal"":""cat"",""BookGenre"":""science fiction""},""House 3"":{""Name"":""Eric"",""Nationality"":""dane"",""Animal"":""horse"",""BookGenre"":""mystery""}}'}"
+lgp-test-3x4-2,3*4,"There are 3 houses, numbered 1 to 3 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Eric`, `Peter`, `Arnold`
+ - Each person has a unique favorite drink: `water`, `milk`, `tea`
+ - They all have a unique favorite flower: `carnations`, `lilies`, `daffodils`
+ - Everyone has a unique favorite cigar: `pall mall`, `prince`, `blue master`
+
+## Clues:
+1. The person who smokes Blue Master is the person who loves a bouquet of daffodils.
+2. Arnold is somewhere to the right of the person who loves a carnations arrangement.
+3. Eric is somewhere to the right of the Prince smoker.
+4. The one who only drinks water is the person partial to Pall Mall.
+5. The person who loves the boquet of lilies is Peter.
+6. The tea drinker is not in the third house.
+","{'header': array(['House', 'Name', 'Drink', 'Flower', 'Cigar'], dtype=object), 'rows': array([array(['1', 'Peter', 'tea', 'lilies', 'prince'], dtype=object),
+       array(['2', 'Eric', 'water', 'carnations', 'pall mall'], dtype=object),
+       array(['3', 'Arnold', 'milk', 'daffodils', 'blue master'], dtype=object)],
+      dtype=object)}",2024-07-03T21:21:29.206036,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Drink"":""___"",""Flower"":""___"",""Cigar"":""___""},""House 2"":{""Name"":""___"",""Drink"":""___"",""Flower"":""___"",""Cigar"":""___""},""House 3"":{""Name"":""___"",""Drink"":""___"",""Flower"":""___"",""Cigar"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Peter"",""Drink"":""tea"",""Flower"":""lilies"",""Cigar"":""prince""},""House 2"":{""Name"":""Eric"",""Drink"":""water"",""Flower"":""carnations"",""Cigar"":""pall mall""},""House 3"":{""Name"":""Arnold"",""Drink"":""milk"",""Flower"":""daffodils"",""Cigar"":""blue master""}}'}"
 lgp-test-4x5-23,4*5,"There are 4 houses, numbered 1 to 4 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
  - Each person has a unique name: `Peter`, `Eric`, `Arnold`, `Alice`
  - People have unique favorite music genres: `pop`, `classical`, `jazz`, `rock`
@@ -44,6 +117,126 @@ lgp-test-4x5-23,4*5,"There are 4 houses, numbered 1 to 4 from left to right, as 
        array(['4', 'Peter', 'pop', 'gardening', 'high school', 'bird'],
              dtype=object)                                             ],
       dtype=object)}",2024-07-03T21:21:29.207765,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""MusicGenre"":""___"",""Hobby"":""___"",""Education"":""___"",""Pet"":""___""},""House 2"":{""Name"":""___"",""MusicGenre"":""___"",""Hobby"":""___"",""Education"":""___"",""Pet"":""___""},""House 3"":{""Name"":""___"",""MusicGenre"":""___"",""Hobby"":""___"",""Education"":""___"",""Pet"":""___""},""House 4"":{""Name"":""___"",""MusicGenre"":""___"",""Hobby"":""___"",""Education"":""___"",""Pet"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Eric"",""MusicGenre"":""rock"",""Hobby"":""cooking"",""Education"":""associate"",""Pet"":""fish""},""House 2"":{""Name"":""Alice"",""MusicGenre"":""classical"",""Hobby"":""photography"",""Education"":""bachelor"",""Pet"":""dog""},""House 3"":{""Name"":""Arnold"",""MusicGenre"":""jazz"",""Hobby"":""painting"",""Education"":""master"",""Pet"":""cat""},""House 4"":{""Name"":""Peter"",""MusicGenre"":""pop"",""Hobby"":""gardening"",""Education"":""high school"",""Pet"":""bird""}}'}"
+lgp-test-4x5-12,4*5,"There are 4 houses, numbered 1 to 4 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Peter`, `Alice`, `Eric`, `Arnold`
+ - Everyone has a favorite smoothie: `desert`, `watermelon`, `dragonfruit`, `cherry`
+ - Each person lives in a unique style of house: `craftsman`, `victorian`, `ranch`, `colonial`
+ - The people are of nationalities: `dane`, `brit`, `norwegian`, `swede`
+ - People use unique phone models: `google pixel 6`, `samsung galaxy s21`, `iphone 13`, `oneplus 9`
+
+## Clues:
+1. The person who uses a Samsung Galaxy S21 is Arnold.
+2. There is one house between Alice and the Norwegian.
+3. There are two houses between the person who uses a OnePlus 9 and the person living in a colonial-style house.
+4. The person living in a colonial-style house is the British person.
+5. The person who uses an iPhone 13 is somewhere to the right of Alice.
+6. The Watermelon smoothie lover is the British person.
+7. The person residing in a Victorian house is somewhere to the left of the person who uses a Samsung Galaxy S21.
+8. The Dane is the person who uses a OnePlus 9.
+9. The Desert smoothie lover is not in the second house.
+10. The person who uses an iPhone 13 is the Dragonfruit smoothie lover.
+11. Eric is the Norwegian.
+12. The person who uses a Samsung Galaxy S21 is the person in a Craftsman-style house.
+","{'header': array(['House', 'Name', 'Smoothie', 'HouseStyle', 'Nationality',
+       'PhoneModel'], dtype=object), 'rows': array([array(['1', 'Alice', 'desert', 'victorian', 'dane', 'oneplus 9'],
+             dtype=object)                                              ,
+       array(['2', 'Arnold', 'cherry', 'craftsman', 'swede',
+              'samsung galaxy s21'], dtype=object)          ,
+       array(['3', 'Eric', 'dragonfruit', 'ranch', 'norwegian', 'iphone 13'],
+             dtype=object)                                                   ,
+       array(['4', 'Peter', 'watermelon', 'colonial', 'brit', 'google pixel 6'],
+             dtype=object)                                                      ],
+      dtype=object)}",2024-07-03T21:21:29.207689,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Smoothie"":""___"",""HouseStyle"":""___"",""Nationality"":""___"",""PhoneModel"":""___""},""House 2"":{""Name"":""___"",""Smoothie"":""___"",""HouseStyle"":""___"",""Nationality"":""___"",""PhoneModel"":""___""},""House 3"":{""Name"":""___"",""Smoothie"":""___"",""HouseStyle"":""___"",""Nationality"":""___"",""PhoneModel"":""___""},""House 4"":{""Name"":""___"",""Smoothie"":""___"",""HouseStyle"":""___"",""Nationality"":""___"",""PhoneModel"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Alice"",""Smoothie"":""desert"",""HouseStyle"":""victorian"",""Nationality"":""dane"",""PhoneModel"":""oneplus 9""},""House 2"":{""Name"":""Arnold"",""Smoothie"":""cherry"",""HouseStyle"":""craftsman"",""Nationality"":""swede"",""PhoneModel"":""samsung galaxy s21""},""House 3"":{""Name"":""Eric"",""Smoothie"":""dragonfruit"",""HouseStyle"":""ranch"",""Nationality"":""norwegian"",""PhoneModel"":""iphone 13""},""House 4"":{""Name"":""Peter"",""Smoothie"":""watermelon"",""HouseStyle"":""colonial"",""Nationality"":""brit"",""PhoneModel"":""google pixel 6""}}'}"
+lgp-test-4x5-38,4*5,"There are 4 houses, numbered 1 to 4 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Arnold`, `Eric`, `Peter`, `Alice`
+ - People have unique favorite sports: `basketball`, `soccer`, `swimming`, `tennis`
+ - People use unique phone models: `oneplus 9`, `google pixel 6`, `samsung galaxy s21`, `iphone 13`
+ - People own unique car models: `toyota camry`, `ford f150`, `tesla model 3`, `honda civic`
+ - They all have a unique favorite flower: `roses`, `daffodils`, `lilies`, `carnations`
+
+## Clues:
+1. The person who owns a Honda Civic is the person who uses an iPhone 13.
+2. The person who loves tennis is the person who uses an iPhone 13.
+3. The person who uses a Google Pixel 6 is somewhere to the right of the person who loves basketball.
+4. The person who uses an iPhone 13 is directly left of Eric.
+5. Alice is the person who owns a Ford F-150.
+6. Arnold is the person who loves a bouquet of daffodils.
+7. The person who loves the boquet of lilies is in the third house.
+8. The person who loves soccer is Peter.
+9. The person who uses a OnePlus 9 is the person who loves the rose bouquet.
+10. The person who loves a carnations arrangement is not in the fourth house.
+11. Peter is the person who loves the boquet of lilies.
+12. The person who owns a Toyota Camry is directly left of the person who owns a Tesla Model 3.
+","{'header': array(['House', 'Name', 'FavoriteSport', 'PhoneModel', 'CarModel',
+       'Flower'], dtype=object), 'rows': array([array(['1', 'Arnold', 'tennis', 'iphone 13', 'honda civic', 'daffodils'],
+             dtype=object)                                                      ,
+       array(['2', 'Eric', 'basketball', 'samsung galaxy s21', 'toyota camry',
+              'carnations'], dtype=object)                                    ,
+       array(['3', 'Peter', 'soccer', 'google pixel 6', 'tesla model 3',
+              'lilies'], dtype=object)                                  ,
+       array(['4', 'Alice', 'swimming', 'oneplus 9', 'ford f150', 'roses'],
+             dtype=object)                                                 ],
+      dtype=object)}",2024-07-03T21:21:29.207868,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""FavoriteSport"":""___"",""PhoneModel"":""___"",""CarModel"":""___"",""Flower"":""___""},""House 2"":{""Name"":""___"",""FavoriteSport"":""___"",""PhoneModel"":""___"",""CarModel"":""___"",""Flower"":""___""},""House 3"":{""Name"":""___"",""FavoriteSport"":""___"",""PhoneModel"":""___"",""CarModel"":""___"",""Flower"":""___""},""House 4"":{""Name"":""___"",""FavoriteSport"":""___"",""PhoneModel"":""___"",""CarModel"":""___"",""Flower"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Arnold"",""FavoriteSport"":""tennis"",""PhoneModel"":""iphone 13"",""CarModel"":""honda civic"",""Flower"":""daffodils""},""House 2"":{""Name"":""Eric"",""FavoriteSport"":""basketball"",""PhoneModel"":""samsung galaxy s21"",""CarModel"":""toyota camry"",""Flower"":""carnations""},""House 3"":{""Name"":""Peter"",""FavoriteSport"":""soccer"",""PhoneModel"":""google pixel 6"",""CarModel"":""tesla model 3"",""Flower"":""lilies""},""House 4"":{""Name"":""Alice"",""FavoriteSport"":""swimming"",""PhoneModel"":""oneplus 9"",""CarModel"":""ford f150"",""Flower"":""roses""}}'}"
+lgp-test-4x5-4,4*5,"There are 4 houses, numbered 1 to 4 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Alice`, `Arnold`, `Peter`, `Eric`
+ - Everyone has a unique favorite cigar: `pall mall`, `blue master`, `prince`, `dunhill`
+ - People have unique favorite sports: `soccer`, `swimming`, `tennis`, `basketball`
+ - Each person lives in a unique style of house: `ranch`, `colonial`, `craftsman`, `victorian`
+ - Everyone has a favorite smoothie: `watermelon`, `desert`, `cherry`, `dragonfruit`
+
+## Clues:
+1. The Dunhill smoker is in the first house.
+2. The person who smokes Blue Master is the Watermelon smoothie lover.
+3. The person in a ranch-style home is the person who loves basketball.
+4. The person who loves soccer is in the second house.
+5. The Dunhill smoker is the person who likes Cherry smoothies.
+6. The person who loves swimming is somewhere to the right of the person who smokes Blue Master.
+7. The Dragonfruit smoothie lover is Alice.
+8. The Prince smoker is the Dragonfruit smoothie lover.
+9. The Watermelon smoothie lover is not in the second house.
+10. Arnold is the person who smokes Blue Master.
+11. The person who loves swimming is the person living in a colonial-style house.
+12. The person who loves swimming is Peter.
+13. The person in a Craftsman-style house is directly left of the person in a ranch-style home.
+","{'header': array(['House', 'Name', 'Cigar', 'FavoriteSport', 'HouseStyle',
+       'Smoothie'], dtype=object), 'rows': array([array(['1', 'Eric', 'dunhill', 'tennis', 'victorian', 'cherry'],
+             dtype=object)                                             ,
+       array(['2', 'Alice', 'prince', 'soccer', 'craftsman', 'dragonfruit'],
+             dtype=object)                                                  ,
+       array(['3', 'Arnold', 'blue master', 'basketball', 'ranch', 'watermelon'],
+             dtype=object)                                                       ,
+       array(['4', 'Peter', 'pall mall', 'swimming', 'colonial', 'desert'],
+             dtype=object)                                                 ],
+      dtype=object)}",2024-07-03T21:21:29.207633,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Cigar"":""___"",""FavoriteSport"":""___"",""HouseStyle"":""___"",""Smoothie"":""___""},""House 2"":{""Name"":""___"",""Cigar"":""___"",""FavoriteSport"":""___"",""HouseStyle"":""___"",""Smoothie"":""___""},""House 3"":{""Name"":""___"",""Cigar"":""___"",""FavoriteSport"":""___"",""HouseStyle"":""___"",""Smoothie"":""___""},""House 4"":{""Name"":""___"",""Cigar"":""___"",""FavoriteSport"":""___"",""HouseStyle"":""___"",""Smoothie"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Eric"",""Cigar"":""dunhill"",""FavoriteSport"":""tennis"",""HouseStyle"":""victorian"",""Smoothie"":""cherry""},""House 2"":{""Name"":""Alice"",""Cigar"":""prince"",""FavoriteSport"":""soccer"",""HouseStyle"":""craftsman"",""Smoothie"":""dragonfruit""},""House 3"":{""Name"":""Arnold"",""Cigar"":""blue master"",""FavoriteSport"":""basketball"",""HouseStyle"":""ranch"",""Smoothie"":""watermelon""},""House 4"":{""Name"":""Peter"",""Cigar"":""pall mall"",""FavoriteSport"":""swimming"",""HouseStyle"":""colonial"",""Smoothie"":""desert""}}'}"
+lgp-test-4x5-7,4*5,"There are 4 houses, numbered 1 to 4 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Eric`, `Peter`, `Alice`, `Arnold`
+ - Each person has a unique birthday month: `sept`, `feb`, `april`, `jan`
+ - People have unique favorite book genres: `romance`, `fantasy`, `mystery`, `science fiction`
+ - They all have a unique favorite flower: `roses`, `daffodils`, `lilies`, `carnations`
+ - Each person prefers a unique type of vacation: `cruise`, `city`, `mountain`, `beach`
+
+## Clues:
+1. There are two houses between the person who loves fantasy books and the person whose birthday is in April.
+2. The person whose birthday is in February is directly left of the person who loves a bouquet of daffodils.
+3. The person who likes going on cruises is the person who loves a carnations arrangement.
+4. The person whose birthday is in September is directly left of the person who loves science fiction books.
+5. The person who loves a bouquet of daffodils is the person who prefers city breaks.
+6. The person whose birthday is in April is Arnold.
+7. The person whose birthday is in February is the person who loves a carnations arrangement.
+8. Alice is the person who likes going on cruises.
+9. The person who loves the boquet of lilies is the person who enjoys mountain retreats.
+10. Eric is not in the third house.
+11. The person who loves science fiction books is the person who loves the boquet of lilies.
+12. The person who loves mystery books is Eric.
+13. Eric and the person whose birthday is in January are next to each other.
+","{'header': array(['House', 'Name', 'Birthday', 'BookGenre', 'Flower', 'Vacation'],
+      dtype=object), 'rows': array([array(['1', 'Alice', 'feb', 'fantasy', 'carnations', 'cruise'],
+             dtype=object)                                            ,
+       array(['2', 'Eric', 'sept', 'mystery', 'daffodils', 'city'], dtype=object),
+       array(['3', 'Peter', 'jan', 'science fiction', 'lilies', 'mountain'],
+             dtype=object)                                                  ,
+       array(['4', 'Arnold', 'april', 'romance', 'roses', 'beach'], dtype=object)],
+      dtype=object)}",2024-07-03T21:21:29.207654,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Birthday"":""___"",""BookGenre"":""___"",""Flower"":""___"",""Vacation"":""___""},""House 2"":{""Name"":""___"",""Birthday"":""___"",""BookGenre"":""___"",""Flower"":""___"",""Vacation"":""___""},""House 3"":{""Name"":""___"",""Birthday"":""___"",""BookGenre"":""___"",""Flower"":""___"",""Vacation"":""___""},""House 4"":{""Name"":""___"",""Birthday"":""___"",""BookGenre"":""___"",""Flower"":""___"",""Vacation"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Alice"",""Birthday"":""feb"",""BookGenre"":""fantasy"",""Flower"":""carnations"",""Vacation"":""cruise""},""House 2"":{""Name"":""Eric"",""Birthday"":""sept"",""BookGenre"":""mystery"",""Flower"":""daffodils"",""Vacation"":""city""},""House 3"":{""Name"":""Peter"",""Birthday"":""jan"",""BookGenre"":""science fiction"",""Flower"":""lilies"",""Vacation"":""mountain""},""House 4"":{""Name"":""Arnold"",""Birthday"":""april"",""BookGenre"":""romance"",""Flower"":""roses"",""Vacation"":""beach""}}'}"
 lgp-test-5x6-13,5*6,"There are 5 houses, numbered 1 to 5 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
  - Each person has a unique name: `Eric`, `Peter`, `Arnold`, `Alice`, `Bob`
  - Everyone has something unique for lunch: `stir fry`, `spaghetti`, `stew`, `grilled cheese`, `pizza`
@@ -84,6 +277,169 @@ lgp-test-5x6-13,5*6,"There are 5 houses, numbered 1 to 5 from left to right, as 
        array(['5', 'Peter', 'grilled cheese', 'tesla model 3', 'huawei p50',
               'teacher', 'water'], dtype=object)                            ],
       dtype=object)}",2024-07-03T21:21:29.209443,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Food"":""___"",""CarModel"":""___"",""PhoneModel"":""___"",""Occupation"":""___"",""Drink"":""___""},""House 2"":{""Name"":""___"",""Food"":""___"",""CarModel"":""___"",""PhoneModel"":""___"",""Occupation"":""___"",""Drink"":""___""},""House 3"":{""Name"":""___"",""Food"":""___"",""CarModel"":""___"",""PhoneModel"":""___"",""Occupation"":""___"",""Drink"":""___""},""House 4"":{""Name"":""___"",""Food"":""___"",""CarModel"":""___"",""PhoneModel"":""___"",""Occupation"":""___"",""Drink"":""___""},""House 5"":{""Name"":""___"",""Food"":""___"",""CarModel"":""___"",""PhoneModel"":""___"",""Occupation"":""___"",""Drink"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Bob"",""Food"":""stew"",""CarModel"":""bmw 3 series"",""PhoneModel"":""iphone 13"",""Occupation"":""engineer"",""Drink"":""coffee""},""House 2"":{""Name"":""Alice"",""Food"":""stir fry"",""CarModel"":""honda civic"",""PhoneModel"":""samsung galaxy s21"",""Occupation"":""artist"",""Drink"":""root beer""},""House 3"":{""Name"":""Arnold"",""Food"":""spaghetti"",""CarModel"":""toyota camry"",""PhoneModel"":""google pixel 6"",""Occupation"":""doctor"",""Drink"":""tea""},""House 4"":{""Name"":""Eric"",""Food"":""pizza"",""CarModel"":""ford f150"",""PhoneModel"":""oneplus 9"",""Occupation"":""lawyer"",""Drink"":""milk""},""House 5"":{""Name"":""Peter"",""Food"":""grilled cheese"",""CarModel"":""tesla model 3"",""PhoneModel"":""huawei p50"",""Occupation"":""teacher"",""Drink"":""water""}}'}"
+lgp-test-5x6-3,5*6,"There are 5 houses, numbered 1 to 5 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Eric`, `Arnold`, `Bob`, `Peter`, `Alice`
+ - Everyone has a unique favorite cigar: `dunhill`, `blue master`, `blends`, `pall mall`, `prince`
+ - Each person has an occupation: `lawyer`, `artist`, `engineer`, `doctor`, `teacher`
+ - People own unique car models: `ford f150`, `toyota camry`, `honda civic`, `bmw 3 series`, `tesla model 3`
+ - Everyone has a favorite smoothie: `watermelon`, `cherry`, `dragonfruit`, `desert`, `lime`
+ - Everyone has something unique for lunch: `stew`, `spaghetti`, `grilled cheese`, `pizza`, `stir fry`
+
+## Clues:
+1. There are two houses between the person who owns a BMW 3 Series and the person who owns a Tesla Model 3.
+2. The person who is an artist is Bob.
+3. The person who owns a Ford F-150 is the person who smokes Blue Master.
+4. The person who loves the spaghetti eater is in the second house.
+5. The person who is an engineer is the Watermelon smoothie lover.
+6. Alice is the person who drinks Lime smoothies.
+7. The person who is an artist is the Dunhill smoker.
+8. The person who likes Cherry smoothies is not in the fifth house.
+9. Peter is not in the fourth house.
+10. The Desert smoothie lover is the person who loves stir fry.
+11. The person who likes Cherry smoothies is somewhere to the right of the person who smokes many unique blends.
+12. The person who is a teacher is the person who loves eating grilled cheese.
+13. Arnold is the person who is a lawyer.
+14. The Dragonfruit smoothie lover is the person who owns a Honda Civic.
+15. Peter is somewhere to the right of the Desert smoothie lover.
+16. The Prince smoker is the Watermelon smoothie lover.
+17. There is one house between the person who owns a Honda Civic and the person who loves the stew.
+18. The person who owns a Tesla Model 3 is the person who likes Cherry smoothies.
+19. The person who owns a Ford F-150 is directly left of the person who is a doctor.
+20. The person who is an artist is the Desert smoothie lover.
+","{'header': array(['House', 'Name', 'Cigar', 'Occupation', 'CarModel', 'Smoothie',
+       'Food'], dtype=object), 'rows': array([array(['1', 'Bob', 'dunhill', 'artist', 'bmw 3 series', 'desert',
+              'stir fry'], dtype=object)                                ,
+       array(['2', 'Arnold', 'blends', 'lawyer', 'honda civic', 'dragonfruit',
+              'spaghetti'], dtype=object)                                     ,
+       array(['3', 'Alice', 'blue master', 'teacher', 'ford f150', 'lime',
+              'grilled cheese'], dtype=object)                            ,
+       array(['4', 'Eric', 'pall mall', 'doctor', 'tesla model 3', 'cherry',
+              'stew'], dtype=object)                                        ,
+       array(['5', 'Peter', 'prince', 'engineer', 'toyota camry', 'watermelon',
+              'pizza'], dtype=object)                                          ],
+      dtype=object)}",2024-07-03T21:21:29.209367,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Cigar"":""___"",""Occupation"":""___"",""CarModel"":""___"",""Smoothie"":""___"",""Food"":""___""},""House 2"":{""Name"":""___"",""Cigar"":""___"",""Occupation"":""___"",""CarModel"":""___"",""Smoothie"":""___"",""Food"":""___""},""House 3"":{""Name"":""___"",""Cigar"":""___"",""Occupation"":""___"",""CarModel"":""___"",""Smoothie"":""___"",""Food"":""___""},""House 4"":{""Name"":""___"",""Cigar"":""___"",""Occupation"":""___"",""CarModel"":""___"",""Smoothie"":""___"",""Food"":""___""},""House 5"":{""Name"":""___"",""Cigar"":""___"",""Occupation"":""___"",""CarModel"":""___"",""Smoothie"":""___"",""Food"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Bob"",""Cigar"":""dunhill"",""Occupation"":""artist"",""CarModel"":""bmw 3 series"",""Smoothie"":""desert"",""Food"":""stir fry""},""House 2"":{""Name"":""Arnold"",""Cigar"":""blends"",""Occupation"":""lawyer"",""CarModel"":""honda civic"",""Smoothie"":""dragonfruit"",""Food"":""spaghetti""},""House 3"":{""Name"":""Alice"",""Cigar"":""blue master"",""Occupation"":""teacher"",""CarModel"":""ford f150"",""Smoothie"":""lime"",""Food"":""grilled cheese""},""House 4"":{""Name"":""Eric"",""Cigar"":""pall mall"",""Occupation"":""doctor"",""CarModel"":""tesla model 3"",""Smoothie"":""cherry"",""Food"":""stew""},""House 5"":{""Name"":""Peter"",""Cigar"":""prince"",""Occupation"":""engineer"",""CarModel"":""toyota camry"",""Smoothie"":""watermelon"",""Food"":""pizza""}}'}"
+lgp-test-5x6-17,5*6,"There are 5 houses, numbered 1 to 5 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Bob`, `Alice`, `Eric`, `Peter`, `Arnold`
+ - People use unique phone models: `iphone 13`, `samsung galaxy s21`, `huawei p50`, `google pixel 6`, `oneplus 9`
+ - People have unique favorite sports: `soccer`, `swimming`, `baseball`, `basketball`, `tennis`
+ - Everyone has a favorite smoothie: `cherry`, `dragonfruit`, `lime`, `desert`, `watermelon`
+ - Each person prefers a unique type of vacation: `city`, `cruise`, `beach`, `mountain`, `camping`
+ - The people keep unique animals: `horse`, `fish`, `cat`, `dog`, `bird`
+
+## Clues:
+1. Peter is somewhere to the right of the person who uses an iPhone 13.
+2. The person who loves tennis is directly left of the person who uses a Google Pixel 6.
+3. There is one house between the Watermelon smoothie lover and the person who loves beach vacations.
+4. The person who loves baseball is in the fourth house.
+5. The dog owner is Peter.
+6. There is one house between the person who prefers city breaks and the person who keeps horses.
+7. The fish enthusiast is directly left of the cat lover.
+8. Arnold is the Desert smoothie lover.
+9. The person who likes Cherry smoothies is the person who enjoys mountain retreats.
+10. The person who loves swimming is not in the first house.
+11. Bob is the person who prefers city breaks.
+12. The person who uses a Huawei P50 is the fish enthusiast.
+13. The person who loves tennis is the person who enjoys mountain retreats.
+14. The person who loves baseball is somewhere to the left of the person who loves soccer.
+15. The person who uses a OnePlus 9 is Peter.
+16. There is one house between the person who prefers city breaks and Alice.
+17. The person who enjoys camping trips is the Dragonfruit smoothie lover.
+18. The person who loves baseball is the person who enjoys camping trips.
+19. The person who loves beach vacations is directly left of the person who enjoys camping trips.
+20. Bob is the fish enthusiast.
+","{'header': array(['House', 'Name', 'PhoneModel', 'FavoriteSport', 'Smoothie',
+       'Vacation', 'Animal'], dtype=object), 'rows': array([array(['1', 'Bob', 'huawei p50', 'basketball', 'watermelon', 'city',
+              'fish'], dtype=object)                                       ,
+       array(['2', 'Eric', 'iphone 13', 'tennis', 'cherry', 'mountain', 'cat'],
+             dtype=object)                                                     ,
+       array(['3', 'Alice', 'google pixel 6', 'swimming', 'lime', 'beach',
+              'horse'], dtype=object)                                     ,
+       array(['4', 'Peter', 'oneplus 9', 'baseball', 'dragonfruit', 'camping',
+              'dog'], dtype=object)                                           ,
+       array(['5', 'Arnold', 'samsung galaxy s21', 'soccer', 'desert', 'cruise',
+              'bird'], dtype=object)                                            ],
+      dtype=object)}",2024-07-03T21:21:29.209508,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""PhoneModel"":""___"",""FavoriteSport"":""___"",""Smoothie"":""___"",""Vacation"":""___"",""Animal"":""___""},""House 2"":{""Name"":""___"",""PhoneModel"":""___"",""FavoriteSport"":""___"",""Smoothie"":""___"",""Vacation"":""___"",""Animal"":""___""},""House 3"":{""Name"":""___"",""PhoneModel"":""___"",""FavoriteSport"":""___"",""Smoothie"":""___"",""Vacation"":""___"",""Animal"":""___""},""House 4"":{""Name"":""___"",""PhoneModel"":""___"",""FavoriteSport"":""___"",""Smoothie"":""___"",""Vacation"":""___"",""Animal"":""___""},""House 5"":{""Name"":""___"",""PhoneModel"":""___"",""FavoriteSport"":""___"",""Smoothie"":""___"",""Vacation"":""___"",""Animal"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Bob"",""PhoneModel"":""huawei p50"",""FavoriteSport"":""basketball"",""Smoothie"":""watermelon"",""Vacation"":""city"",""Animal"":""fish""},""House 2"":{""Name"":""Eric"",""PhoneModel"":""iphone 13"",""FavoriteSport"":""tennis"",""Smoothie"":""cherry"",""Vacation"":""mountain"",""Animal"":""cat""},""House 3"":{""Name"":""Alice"",""PhoneModel"":""google pixel 6"",""FavoriteSport"":""swimming"",""Smoothie"":""lime"",""Vacation"":""beach"",""Animal"":""horse""},""House 4"":{""Name"":""Peter"",""PhoneModel"":""oneplus 9"",""FavoriteSport"":""baseball"",""Smoothie"":""dragonfruit"",""Vacation"":""camping"",""Animal"":""dog""},""House 5"":{""Name"":""Arnold"",""PhoneModel"":""samsung galaxy s21"",""FavoriteSport"":""soccer"",""Smoothie"":""desert"",""Vacation"":""cruise"",""Animal"":""bird""}}'}"
+lgp-test-5x6-22,5*6,"There are 5 houses, numbered 1 to 5 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Peter`, `Arnold`, `Eric`, `Alice`, `Bob`
+ - Each person has a unique level of education: `associate`, `doctorate`, `high school`, `bachelor`, `master`
+ - Each mother is accompanied by their child: `Fred`, `Meredith`, `Bella`, `Timothy`, `Samantha`
+ - Everyone has a unique favorite cigar: `prince`, `pall mall`, `blue master`, `dunhill`, `blends`
+ - The people are of nationalities: `swede`, `brit`, `dane`, `german`, `norwegian`
+ - People have unique favorite book genres: `romance`, `mystery`, `biography`, `science fiction`, `fantasy`
+
+## Clues:
+1. The person with a master's degree is the person partial to Pall Mall.
+2. The person with a high school diploma is in the fourth house.
+3. The person's child is named Samantha is in the first house.
+4. The Norwegian and the person with a master's degree are next to each other.
+5. The German is the Dunhill smoker.
+6. The person who is the mother of Timothy is directly left of the person with a master's degree.
+7. Arnold and the Dane are next to each other.
+8. The Swedish person is the person who loves mystery books.
+9. The Swedish person is Alice.
+10. Arnold is the person with an associate's degree.
+11. The person with a doctorate is in the second house.
+12. Peter is somewhere to the right of the person who loves biography books.
+13. The person who smokes many unique blends is Alice.
+14. The person who loves fantasy books is in the first house.
+15. Peter is the Norwegian.
+16. The person with a doctorate is the person's child is named Meredith.
+17. The Prince smoker is somewhere to the left of the person who smokes many unique blends.
+18. The person partial to Pall Mall is the person's child is named Bella.
+19. The person who loves romance books is Bob.
+","{'header': array(['House', 'Name', 'Education', 'Children', 'Cigar', 'Nationality',
+       'BookGenre'], dtype=object), 'rows': array([array(['1', 'Arnold', 'associate', 'Samantha', 'dunhill', 'german',
+              'fantasy'], dtype=object)                                   ,
+       array(['2', 'Eric', 'doctorate', 'Meredith', 'prince', 'dane',
+              'biography'], dtype=object)                            ,
+       array(['3', 'Alice', 'bachelor', 'Fred', 'blends', 'swede', 'mystery'],
+             dtype=object)                                                    ,
+       array(['4', 'Peter', 'high school', 'Timothy', 'blue master', 'norwegian',
+              'science fiction'], dtype=object)                                  ,
+       array(['5', 'Bob', 'master', 'Bella', 'pall mall', 'brit', 'romance'],
+             dtype=object)                                                   ],
+      dtype=object)}",2024-07-03T21:21:29.209547,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Education"":""___"",""Children"":""___"",""Cigar"":""___"",""Nationality"":""___"",""BookGenre"":""___""},""House 2"":{""Name"":""___"",""Education"":""___"",""Children"":""___"",""Cigar"":""___"",""Nationality"":""___"",""BookGenre"":""___""},""House 3"":{""Name"":""___"",""Education"":""___"",""Children"":""___"",""Cigar"":""___"",""Nationality"":""___"",""BookGenre"":""___""},""House 4"":{""Name"":""___"",""Education"":""___"",""Children"":""___"",""Cigar"":""___"",""Nationality"":""___"",""BookGenre"":""___""},""House 5"":{""Name"":""___"",""Education"":""___"",""Children"":""___"",""Cigar"":""___"",""Nationality"":""___"",""BookGenre"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Arnold"",""Education"":""associate"",""Children"":""Samantha"",""Cigar"":""dunhill"",""Nationality"":""german"",""BookGenre"":""fantasy""},""House 2"":{""Name"":""Eric"",""Education"":""doctorate"",""Children"":""Meredith"",""Cigar"":""prince"",""Nationality"":""dane"",""BookGenre"":""biography""},""House 3"":{""Name"":""Alice"",""Education"":""bachelor"",""Children"":""Fred"",""Cigar"":""blends"",""Nationality"":""swede"",""BookGenre"":""mystery""},""House 4"":{""Name"":""Peter"",""Education"":""high school"",""Children"":""Timothy"",""Cigar"":""blue master"",""Nationality"":""norwegian"",""BookGenre"":""science fiction""},""House 5"":{""Name"":""Bob"",""Education"":""master"",""Children"":""Bella"",""Cigar"":""pall mall"",""Nationality"":""brit"",""BookGenre"":""romance""}}'}"
+lgp-test-5x6-37,5*6,"There are 5 houses, numbered 1 to 5 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Bob`, `Arnold`, `Alice`, `Peter`, `Eric`
+ - Each person has a unique hobby: `cooking`, `gardening`, `painting`, `photography`, `knitting`
+ - People have unique favorite sports: `swimming`, `tennis`, `soccer`, `baseball`, `basketball`
+ - Each person lives in a unique style of house: `ranch`, `craftsman`, `victorian`, `modern`, `colonial`
+ - Each mother is accompanied by their child: `Timothy`, `Samantha`, `Bella`, `Meredith`, `Fred`
+ - People have unique heights: `average`, `very tall`, `very short`, `short`, `tall`
+
+## Clues:
+1. The person who has an average height is the person's child is named Meredith.
+2. The person who is tall is in the second house.
+3. Peter is directly left of the person residing in a Victorian house.
+4. Alice is the person who is tall.
+5. The person who loves baseball is the person who is very tall.
+6. The person's child is named Meredith and the person who is the mother of Timothy are next to each other.
+7. Bob is the person who paints as a hobby.
+8. The person who enjoys gardening is in the second house.
+9. The person who is very short is somewhere to the right of Eric.
+10. The person who loves tennis is the person's child is named Samantha.
+11. The person who loves soccer is not in the first house.
+12. The person's child is named Samantha is the person in a modern-style house.
+13. The person in a Craftsman-style house is the person who has an average height.
+14. The person's child is named Fred is the person residing in a Victorian house.
+15. The person who is short is the person who loves basketball.
+16. Peter is the person who is very tall.
+17. The person in a ranch-style home is somewhere to the left of the person who loves cooking.
+18. The person who enjoys knitting and the person who enjoys gardening are next to each other.
+19. The person in a modern-style house is the person who loves cooking.
+20. The person residing in a Victorian house is in the fifth house.
+","{'header': array(['House', 'Name', 'Hobby', 'FavoriteSport', 'HouseStyle',
+       'Children', 'Height'], dtype=object), 'rows': array([array(['1', 'Eric', 'knitting', 'swimming', 'craftsman', 'Meredith',
+              'average'], dtype=object)                                    ,
+       array(['2', 'Alice', 'gardening', 'soccer', 'ranch', 'Timothy', 'tall'],
+             dtype=object)                                                     ,
+       array(['3', 'Arnold', 'cooking', 'tennis', 'modern', 'Samantha',
+              'very short'], dtype=object)                             ,
+       array(['4', 'Peter', 'photography', 'baseball', 'colonial', 'Bella',
+              'very tall'], dtype=object)                                  ,
+       array(['5', 'Bob', 'painting', 'basketball', 'victorian', 'Fred', 'short'],
+             dtype=object)                                                        ],
+      dtype=object)}",2024-07-03T21:21:29.209659,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Hobby"":""___"",""FavoriteSport"":""___"",""HouseStyle"":""___"",""Children"":""___"",""Height"":""___""},""House 2"":{""Name"":""___"",""Hobby"":""___"",""FavoriteSport"":""___"",""HouseStyle"":""___"",""Children"":""___"",""Height"":""___""},""House 3"":{""Name"":""___"",""Hobby"":""___"",""FavoriteSport"":""___"",""HouseStyle"":""___"",""Children"":""___"",""Height"":""___""},""House 4"":{""Name"":""___"",""Hobby"":""___"",""FavoriteSport"":""___"",""HouseStyle"":""___"",""Children"":""___"",""Height"":""___""},""House 5"":{""Name"":""___"",""Hobby"":""___"",""FavoriteSport"":""___"",""HouseStyle"":""___"",""Children"":""___"",""Height"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Eric"",""Hobby"":""knitting"",""FavoriteSport"":""swimming"",""HouseStyle"":""craftsman"",""Children"":""Meredith"",""Height"":""average""},""House 2"":{""Name"":""Alice"",""Hobby"":""gardening"",""FavoriteSport"":""soccer"",""HouseStyle"":""ranch"",""Children"":""Timothy"",""Height"":""tall""},""House 3"":{""Name"":""Arnold"",""Hobby"":""cooking"",""FavoriteSport"":""tennis"",""HouseStyle"":""modern"",""Children"":""Samantha"",""Height"":""very short""},""House 4"":{""Name"":""Peter"",""Hobby"":""photography"",""FavoriteSport"":""baseball"",""HouseStyle"":""colonial"",""Children"":""Bella"",""Height"":""very tall""},""House 5"":{""Name"":""Bob"",""Hobby"":""painting"",""FavoriteSport"":""basketball"",""HouseStyle"":""victorian"",""Children"":""Fred"",""Height"":""short""}}'}"
 lgp-test-6x6-22,6*6,"There are 6 houses, numbered 1 to 6 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
  - Each person has a unique name: `Peter`, `Eric`, `Carol`, `Arnold`, `Bob`, `Alice`
  - Each person has a favorite color: `blue`, `red`, `green`, `yellow`, `purple`, `white`
@@ -132,3 +488,198 @@ lgp-test-6x6-22,6*6,"There are 6 houses, numbered 1 to 6 from left to right, as 
        array(['6', 'Bob', 'blue', 'city', 'auburn', 'engineer', 'carnations'],
              dtype=object)                                                    ],
       dtype=object)}",2024-07-03T21:21:29.211053,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Color"":""___"",""Vacation"":""___"",""HairColor"":""___"",""Occupation"":""___"",""Flower"":""___""},""House 2"":{""Name"":""___"",""Color"":""___"",""Vacation"":""___"",""HairColor"":""___"",""Occupation"":""___"",""Flower"":""___""},""House 3"":{""Name"":""___"",""Color"":""___"",""Vacation"":""___"",""HairColor"":""___"",""Occupation"":""___"",""Flower"":""___""},""House 4"":{""Name"":""___"",""Color"":""___"",""Vacation"":""___"",""HairColor"":""___"",""Occupation"":""___"",""Flower"":""___""},""House 5"":{""Name"":""___"",""Color"":""___"",""Vacation"":""___"",""HairColor"":""___"",""Occupation"":""___"",""Flower"":""___""},""House 6"":{""Name"":""___"",""Color"":""___"",""Vacation"":""___"",""HairColor"":""___"",""Occupation"":""___"",""Flower"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Carol"",""Color"":""white"",""Vacation"":""beach"",""HairColor"":""brown"",""Occupation"":""teacher"",""Flower"":""iris""},""House 2"":{""Name"":""Eric"",""Color"":""purple"",""Vacation"":""cruise"",""HairColor"":""gray"",""Occupation"":""lawyer"",""Flower"":""roses""},""House 3"":{""Name"":""Arnold"",""Color"":""yellow"",""Vacation"":""mountain"",""HairColor"":""red"",""Occupation"":""nurse"",""Flower"":""tulips""},""House 4"":{""Name"":""Alice"",""Color"":""green"",""Vacation"":""camping"",""HairColor"":""black"",""Occupation"":""doctor"",""Flower"":""lilies""},""House 5"":{""Name"":""Peter"",""Color"":""red"",""Vacation"":""cultural"",""HairColor"":""blonde"",""Occupation"":""artist"",""Flower"":""daffodils""},""House 6"":{""Name"":""Bob"",""Color"":""blue"",""Vacation"":""city"",""HairColor"":""auburn"",""Occupation"":""engineer"",""Flower"":""carnations""}}'}"
+lgp-test-6x6-33,6*6,"There are 6 houses, numbered 1 to 6 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Alice`, `Carol`, `Bob`, `Peter`, `Eric`, `Arnold`
+ - They all have a unique favorite flower: `lilies`, `tulips`, `roses`, `daffodils`, `iris`, `carnations`
+ - The people are of nationalities: `norwegian`, `dane`, `swede`, `german`, `brit`, `chinese`
+ - Everyone has a favorite smoothie: `cherry`, `watermelon`, `desert`, `dragonfruit`, `blueberry`, `lime`
+ - Each person has a unique hobby: `photography`, `cooking`, `knitting`, `woodworking`, `painting`, `gardening`
+ - Each person has a unique type of pet: `rabbit`, `hamster`, `fish`, `cat`, `bird`, `dog`
+
+## Clues:
+1. The Swedish person is the person who loves cooking.
+2. The person who drinks Blueberry smoothies is Alice.
+3. The person who loves the rose bouquet is not in the sixth house.
+4. The photography enthusiast is somewhere to the right of the Dragonfruit smoothie lover.
+5. The person who loves cooking is the person who loves a bouquet of daffodils.
+6. The person who loves the boquet of lilies and the person who loves the boquet of iris are next to each other.
+7. The person who paints as a hobby is Alice.
+8. Arnold is somewhere to the right of the Watermelon smoothie lover.
+9. The woodworking hobbyist is somewhere to the right of the German.
+10. The woodworking hobbyist is somewhere to the left of the person who loves a bouquet of daffodils.
+11. The Dane is the Watermelon smoothie lover.
+12. The Dragonfruit smoothie lover is Peter.
+13. The person who drinks Lime smoothies is the woodworking hobbyist.
+14. There is one house between the Watermelon smoothie lover and the person who likes Cherry smoothies.
+15. The person who keeps a pet bird is the person who drinks Blueberry smoothies.
+16. The Desert smoothie lover is the person who enjoys gardening.
+17. The person with a pet hamster is in the fifth house.
+18. The person who owns a dog is the Norwegian.
+19. The person who has a cat is somewhere to the right of Bob.
+20. The British person is directly left of Carol.
+21. The person who loves the boquet of iris is Arnold.
+22. The German is somewhere to the right of the person who loves a carnations arrangement.
+23. Bob is the photography enthusiast.
+24. The person with an aquarium of fish is Arnold.
+","{'header': array(['House', 'Name', 'Flower', 'Nationality', 'Smoothie', 'Hobby',
+       'Pet'], dtype=object), 'rows': array([array(['1', 'Peter', 'carnations', 'norwegian', 'dragonfruit', 'knitting',
+              'dog'], dtype=object)                                              ,
+       array(['2', 'Alice', 'roses', 'german', 'blueberry', 'painting', 'bird'],
+             dtype=object)                                                      ,
+       array(['3', 'Bob', 'lilies', 'dane', 'watermelon', 'photography',
+              'rabbit'], dtype=object)                                  ,
+       array(['4', 'Arnold', 'iris', 'brit', 'lime', 'woodworking', 'fish'],
+             dtype=object)                                                  ,
+       array(['5', 'Carol', 'daffodils', 'swede', 'cherry', 'cooking', 'hamster'],
+             dtype=object)                                                        ,
+       array(['6', 'Eric', 'tulips', 'chinese', 'desert', 'gardening', 'cat'],
+             dtype=object)                                                    ],
+      dtype=object)}",2024-07-03T21:21:29.211141,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""Flower"":""___"",""Nationality"":""___"",""Smoothie"":""___"",""Hobby"":""___"",""Pet"":""___""},""House 2"":{""Name"":""___"",""Flower"":""___"",""Nationality"":""___"",""Smoothie"":""___"",""Hobby"":""___"",""Pet"":""___""},""House 3"":{""Name"":""___"",""Flower"":""___"",""Nationality"":""___"",""Smoothie"":""___"",""Hobby"":""___"",""Pet"":""___""},""House 4"":{""Name"":""___"",""Flower"":""___"",""Nationality"":""___"",""Smoothie"":""___"",""Hobby"":""___"",""Pet"":""___""},""House 5"":{""Name"":""___"",""Flower"":""___"",""Nationality"":""___"",""Smoothie"":""___"",""Hobby"":""___"",""Pet"":""___""},""House 6"":{""Name"":""___"",""Flower"":""___"",""Nationality"":""___"",""Smoothie"":""___"",""Hobby"":""___"",""Pet"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Peter"",""Flower"":""carnations"",""Nationality"":""norwegian"",""Smoothie"":""dragonfruit"",""Hobby"":""knitting"",""Pet"":""dog""},""House 2"":{""Name"":""Alice"",""Flower"":""roses"",""Nationality"":""german"",""Smoothie"":""blueberry"",""Hobby"":""painting"",""Pet"":""bird""},""House 3"":{""Name"":""Bob"",""Flower"":""lilies"",""Nationality"":""dane"",""Smoothie"":""watermelon"",""Hobby"":""photography"",""Pet"":""rabbit""},""House 4"":{""Name"":""Arnold"",""Flower"":""iris"",""Nationality"":""brit"",""Smoothie"":""lime"",""Hobby"":""woodworking"",""Pet"":""fish""},""House 5"":{""Name"":""Carol"",""Flower"":""daffodils"",""Nationality"":""swede"",""Smoothie"":""cherry"",""Hobby"":""cooking"",""Pet"":""hamster""},""House 6"":{""Name"":""Eric"",""Flower"":""tulips"",""Nationality"":""chinese"",""Smoothie"":""desert"",""Hobby"":""gardening"",""Pet"":""cat""}}'}"
+lgp-test-6x6-26,6*6,"There are 6 houses, numbered 1 to 6 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Peter`, `Carol`, `Eric`, `Alice`, `Bob`, `Arnold`
+ - People use unique phone models: `huawei p50`, `google pixel 6`, `xiaomi mi 11`, `iphone 13`, `samsung galaxy s21`, `oneplus 9`
+ - Everyone has a unique favorite cigar: `dunhill`, `pall mall`, `blends`, `blue master`, `prince`, `yellow monster`
+ - They all have a unique favorite flower: `daffodils`, `carnations`, `roses`, `tulips`, `lilies`, `iris`
+ - Each person has a favorite color: `yellow`, `red`, `green`, `blue`, `white`, `purple`
+ - People have unique favorite sports: `soccer`, `tennis`, `basketball`, `volleyball`, `swimming`, `baseball`
+
+## Clues:
+1. The person who uses a OnePlus 9 is in the second house.
+2. The person who uses a Xiaomi Mi 11 is somewhere to the left of the person who uses a Huawei P50.
+3. Carol is the person who loves a carnations arrangement.
+4. The person who loves purple is directly left of the person partial to Pall Mall.
+5. The person whose favorite color is green is the person who smokes Blue Master.
+6. The person who loves yellow and the person who loves blue are next to each other.
+7. Eric is somewhere to the right of the person who uses a Samsung Galaxy S21.
+8. There are two houses between Carol and the person who loves a bouquet of daffodils.
+9. The Prince smoker is the person who loves basketball.
+10. The Dunhill smoker is the person who loves volleyball.
+11. The person who loves swimming is the person who uses a Google Pixel 6.
+12. The person who uses a Huawei P50 is directly left of the person who loves white.
+13. The person who uses a OnePlus 9 and the person who loves the rose bouquet are next to each other.
+14. The person who loves the boquet of iris is somewhere to the left of Eric.
+15. The Dunhill smoker is Peter.
+16. The person who loves blue is Peter.
+17. The person who loves the vase of tulips is Bob.
+18. Alice is in the first house.
+19. The person who loves baseball is directly left of the person who smokes Blue Master.
+20. The person who uses a Google Pixel 6 is somewhere to the right of the person who smokes many unique blends.
+21. The person who loves soccer is Carol.
+22. The person who loves a carnations arrangement is directly left of the person who smokes many unique blends.
+23. Eric is the person who smokes many unique blends.
+24. The person who loves volleyball is the person who uses an iPhone 13.
+","{'header': array(['House', 'Name', 'PhoneModel', 'Cigar', 'Flower', 'Color',
+       'FavoriteSport'], dtype=object), 'rows': array([array(['1', 'Alice', 'samsung galaxy s21', 'yellow monster', 'iris',
+              'red', 'baseball'], dtype=object)                            ,
+       array(['2', 'Carol', 'oneplus 9', 'blue master', 'carnations', 'green',
+              'soccer'], dtype=object)                                        ,
+       array(['3', 'Eric', 'xiaomi mi 11', 'blends', 'roses', 'yellow', 'tennis'],
+             dtype=object)                                                        ,
+       array(['4', 'Peter', 'iphone 13', 'dunhill', 'lilies', 'blue',
+              'volleyball'], dtype=object)                           ,
+       array(['5', 'Arnold', 'huawei p50', 'prince', 'daffodils', 'purple',
+              'basketball'], dtype=object)                                 ,
+       array(['6', 'Bob', 'google pixel 6', 'pall mall', 'tulips', 'white',
+              'swimming'], dtype=object)                                   ],
+      dtype=object)}",2024-07-03T21:21:29.211085,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""PhoneModel"":""___"",""Cigar"":""___"",""Flower"":""___"",""Color"":""___"",""FavoriteSport"":""___""},""House 2"":{""Name"":""___"",""PhoneModel"":""___"",""Cigar"":""___"",""Flower"":""___"",""Color"":""___"",""FavoriteSport"":""___""},""House 3"":{""Name"":""___"",""PhoneModel"":""___"",""Cigar"":""___"",""Flower"":""___"",""Color"":""___"",""FavoriteSport"":""___""},""House 4"":{""Name"":""___"",""PhoneModel"":""___"",""Cigar"":""___"",""Flower"":""___"",""Color"":""___"",""FavoriteSport"":""___""},""House 5"":{""Name"":""___"",""PhoneModel"":""___"",""Cigar"":""___"",""Flower"":""___"",""Color"":""___"",""FavoriteSport"":""___""},""House 6"":{""Name"":""___"",""PhoneModel"":""___"",""Cigar"":""___"",""Flower"":""___"",""Color"":""___"",""FavoriteSport"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Alice"",""PhoneModel"":""samsung galaxy s21"",""Cigar"":""yellow monster"",""Flower"":""iris"",""Color"":""red"",""FavoriteSport"":""baseball""},""House 2"":{""Name"":""Carol"",""PhoneModel"":""oneplus 9"",""Cigar"":""blue master"",""Flower"":""carnations"",""Color"":""green"",""FavoriteSport"":""soccer""},""House 3"":{""Name"":""Eric"",""PhoneModel"":""xiaomi mi 11"",""Cigar"":""blends"",""Flower"":""roses"",""Color"":""yellow"",""FavoriteSport"":""tennis""},""House 4"":{""Name"":""Peter"",""PhoneModel"":""iphone 13"",""Cigar"":""dunhill"",""Flower"":""lilies"",""Color"":""blue"",""FavoriteSport"":""volleyball""},""House 5"":{""Name"":""Arnold"",""PhoneModel"":""huawei p50"",""Cigar"":""prince"",""Flower"":""daffodils"",""Color"":""purple"",""FavoriteSport"":""basketball""},""House 6"":{""Name"":""Bob"",""PhoneModel"":""google pixel 6"",""Cigar"":""pall mall"",""Flower"":""tulips"",""Color"":""white"",""FavoriteSport"":""swimming""}}'}"
+lgp-test-6x6-12,6*6,"There are 6 houses, numbered 1 to 6 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Peter`, `Arnold`, `Carol`, `Alice`, `Eric`, `Bob`
+ - People have unique favorite music genres: `pop`, `hip hop`, `rock`, `jazz`, `classical`, `country`
+ - The people keep unique animals: `fish`, `dog`, `cat`, `rabbit`, `horse`, `bird`
+ - Each person lives in a unique style of house: `modern`, `colonial`, `mediterranean`, `ranch`, `victorian`, `craftsman`
+ - Each person has a unique hobby: `gardening`, `woodworking`, `knitting`, `cooking`, `painting`, `photography`
+ - The people are of nationalities: `brit`, `german`, `norwegian`, `swede`, `dane`, `chinese`
+
+## Clues:
+1. The cat lover is the person in a Mediterranean-style villa.
+2. The person who loves country music is somewhere to the right of the rabbit owner.
+3. The person who loves pop music is not in the second house.
+4. Alice is somewhere to the right of Arnold.
+5. The person who loves jazz music and the photography enthusiast are next to each other.
+6. The person who loves rock music is the German.
+7. The woodworking hobbyist is somewhere to the right of the person in a modern-style house.
+8. The person who loves hip-hop music is the Norwegian.
+9. The cat lover is somewhere to the left of the woodworking hobbyist.
+10. Alice is the person who paints as a hobby.
+11. The person in a Craftsman-style house is Carol.
+12. Peter is the fish enthusiast.
+13. The person who loves hip-hop music is not in the fifth house.
+14. The person who loves pop music is not in the sixth house.
+15. The person who loves cooking is somewhere to the left of the Swedish person.
+16. The Dane is directly left of the person who keeps horses.
+17. The rabbit owner is somewhere to the left of the British person.
+18. There is one house between Alice and the person who loves country music.
+19. The person who paints as a hobby is the person living in a colonial-style house.
+20. The German is somewhere to the left of the photography enthusiast.
+21. Eric is the Norwegian.
+22. The person residing in a Victorian house is directly left of the person who enjoys gardening.
+23. There are two houses between the person who loves cooking and the person who loves classical music.
+24. The bird keeper is the person who loves cooking.
+25. The cat lover is directly left of Bob.
+26. Eric is not in the first house.
+27. Carol is somewhere to the right of the German.
+28. The rabbit owner is directly left of the person in a modern-style house.
+","{'header': array(['House', 'Name', 'MusicGenre', 'Animal', 'HouseStyle', 'Hobby',
+       'Nationality'], dtype=object), 'rows': array([array(['1', 'Arnold', 'pop', 'cat', 'mediterranean', 'knitting',
+              'chinese'], dtype=object)                                ,
+       array(['2', 'Bob', 'rock', 'bird', 'victorian', 'cooking', 'german'],
+             dtype=object)                                                  ,
+       array(['3', 'Eric', 'hip hop', 'dog', 'ranch', 'gardening', 'norwegian'],
+             dtype=object)                                                      ,
+       array(['4', 'Alice', 'jazz', 'rabbit', 'colonial', 'painting', 'swede'],
+             dtype=object)                                                     ,
+       array(['5', 'Peter', 'classical', 'fish', 'modern', 'photography', 'dane'],
+             dtype=object)                                                        ,
+       array(['6', 'Carol', 'country', 'horse', 'craftsman', 'woodworking',
+              'brit'], dtype=object)                                       ],
+      dtype=object)}",2024-07-03T21:21:29.210970,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""MusicGenre"":""___"",""Animal"":""___"",""HouseStyle"":""___"",""Hobby"":""___"",""Nationality"":""___""},""House 2"":{""Name"":""___"",""MusicGenre"":""___"",""Animal"":""___"",""HouseStyle"":""___"",""Hobby"":""___"",""Nationality"":""___""},""House 3"":{""Name"":""___"",""MusicGenre"":""___"",""Animal"":""___"",""HouseStyle"":""___"",""Hobby"":""___"",""Nationality"":""___""},""House 4"":{""Name"":""___"",""MusicGenre"":""___"",""Animal"":""___"",""HouseStyle"":""___"",""Hobby"":""___"",""Nationality"":""___""},""House 5"":{""Name"":""___"",""MusicGenre"":""___"",""Animal"":""___"",""HouseStyle"":""___"",""Hobby"":""___"",""Nationality"":""___""},""House 6"":{""Name"":""___"",""MusicGenre"":""___"",""Animal"":""___"",""HouseStyle"":""___"",""Hobby"":""___"",""Nationality"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Arnold"",""MusicGenre"":""pop"",""Animal"":""cat"",""HouseStyle"":""mediterranean"",""Hobby"":""knitting"",""Nationality"":""chinese""},""House 2"":{""Name"":""Bob"",""MusicGenre"":""rock"",""Animal"":""bird"",""HouseStyle"":""victorian"",""Hobby"":""cooking"",""Nationality"":""german""},""House 3"":{""Name"":""Eric"",""MusicGenre"":""hip hop"",""Animal"":""dog"",""HouseStyle"":""ranch"",""Hobby"":""gardening"",""Nationality"":""norwegian""},""House 4"":{""Name"":""Alice"",""MusicGenre"":""jazz"",""Animal"":""rabbit"",""HouseStyle"":""colonial"",""Hobby"":""painting"",""Nationality"":""swede""},""House 5"":{""Name"":""Peter"",""MusicGenre"":""classical"",""Animal"":""fish"",""HouseStyle"":""modern"",""Hobby"":""photography"",""Nationality"":""dane""},""House 6"":{""Name"":""Carol"",""MusicGenre"":""country"",""Animal"":""horse"",""HouseStyle"":""craftsman"",""Hobby"":""woodworking"",""Nationality"":""brit""}}'}"
+lgp-test-6x6-1,6*6,"There are 6 houses, numbered 1 to 6 from left to right, as seen from across the street. Each house is occupied by a different person. Each house has a unique attribute for each of the following characteristics:
+ - Each person has a unique name: `Bob`, `Peter`, `Arnold`, `Eric`, `Alice`, `Carol`
+ - People have unique hair colors: `red`, `gray`, `auburn`, `blonde`, `brown`, `black`
+ - People have unique favorite book genres: `historical fiction`, `biography`, `romance`, `fantasy`, `mystery`, `science fiction`
+ - People have unique heights: `very short`, `very tall`, `tall`, `short`, `super tall`, `average`
+ - Each person has a unique level of education: `associate`, `doctorate`, `high school`, `trade school`, `bachelor`, `master`
+ - Each person has a unique favorite drink: `boba tea`, `milk`, `water`, `root beer`, `coffee`, `tea`
+
+## Clues:
+1. The person with a doctorate and Bob are next to each other.
+2. There is one house between Carol and the person who has black hair.
+3. Peter is the person with a doctorate.
+4. The person who loves science fiction books is Eric.
+5. The one who only drinks water is the person who has an average height.
+6. Alice is the person who loves mystery books.
+7. The person who loves romance books is Bob.
+8. The person who has brown hair is in the second house.
+9. The person who has an average height is in the fourth house.
+10. The boba tea drinker is the person who is very tall.
+11. The person with a high school diploma is Bob.
+12. The person who is short is somewhere to the left of the person who is super tall.
+13. The person who loves historical fiction books and the person with a bachelor's degree are next to each other.
+14. The person who attended trade school is the person who has red hair.
+15. Carol is the person who has auburn hair.
+16. The person who is very short is somewhere to the right of the person who has gray hair.
+17. There are two houses between Eric and the person who loves fantasy books.
+18. There are two houses between the tea drinker and the person who is very short.
+19. Eric is somewhere to the left of the person with a bachelor's degree.
+20. The root beer lover is Alice.
+21. The person with an associate's degree is Arnold.
+22. The person who is tall is not in the second house.
+23. The person who loves science fiction books is the boba tea drinker.
+24. The person who has black hair is not in the fourth house.
+25. The person who is short is the coffee drinker.
+26. The coffee drinker and the person with a high school diploma are next to each other.
+27. The coffee drinker is not in the second house.
+","{'header': array(['House', 'Name', 'HairColor', 'BookGenre', 'Height', 'Education',
+       'Drink'], dtype=object), 'rows': array([array(['1', 'Peter', 'gray', 'biography', 'short', 'doctorate', 'coffee'],
+             dtype=object)                                                       ,
+       array(['2', 'Bob', 'brown', 'romance', 'super tall', 'high school', 'tea'],
+             dtype=object)                                                        ,
+       array(['3', 'Eric', 'red', 'science fiction', 'very tall', 'trade school',
+              'boba tea'], dtype=object)                                         ,
+       array(['4', 'Carol', 'auburn', 'historical fiction', 'average', 'master',
+              'water'], dtype=object)                                           ,
+       array(['5', 'Alice', 'blonde', 'mystery', 'very short', 'bachelor',
+              'root beer'], dtype=object)                                 ,
+       array(['6', 'Arnold', 'black', 'fantasy', 'tall', 'associate', 'milk'],
+             dtype=object)                                                    ],
+      dtype=object)}",2024-07-03T21:21:29.210883,"{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""___"",""HairColor"":""___"",""BookGenre"":""___"",""Height"":""___"",""Education"":""___"",""Drink"":""___""},""House 2"":{""Name"":""___"",""HairColor"":""___"",""BookGenre"":""___"",""Height"":""___"",""Education"":""___"",""Drink"":""___""},""House 3"":{""Name"":""___"",""HairColor"":""___"",""BookGenre"":""___"",""Height"":""___"",""Education"":""___"",""Drink"":""___""},""House 4"":{""Name"":""___"",""HairColor"":""___"",""BookGenre"":""___"",""Height"":""___"",""Education"":""___"",""Drink"":""___""},""House 5"":{""Name"":""___"",""HairColor"":""___"",""BookGenre"":""___"",""Height"":""___"",""Education"":""___"",""Drink"":""___""},""House 6"":{""Name"":""___"",""HairColor"":""___"",""BookGenre"":""___"",""Height"":""___"",""Education"":""___"",""Drink"":""___""}}'}","{'reasoning': '___', 'solution': '{""House 1"":{""Name"":""Peter"",""HairColor"":""gray"",""BookGenre"":""biography"",""Height"":""short"",""Education"":""doctorate"",""Drink"":""coffee""},""House 2"":{""Name"":""Bob"",""HairColor"":""brown"",""BookGenre"":""romance"",""Height"":""super tall"",""Education"":""high school"",""Drink"":""tea""},""House 3"":{""Name"":""Eric"",""HairColor"":""red"",""BookGenre"":""science fiction"",""Height"":""very tall"",""Education"":""trade school"",""Drink"":""boba tea""},""House 4"":{""Name"":""Carol"",""HairColor"":""auburn"",""BookGenre"":""historical fiction"",""Height"":""average"",""Education"":""master"",""Drink"":""water""},""House 5"":{""Name"":""Alice"",""HairColor"":""blonde"",""BookGenre"":""mystery"",""Height"":""very short"",""Education"":""bachelor"",""Drink"":""root beer""},""House 6"":{""Name"":""Arnold"",""HairColor"":""black"",""BookGenre"":""fantasy"",""Height"":""tall"",""Education"":""associate"",""Drink"":""milk""}}'}"

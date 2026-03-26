@@ -1,2 +1,4 @@
 __pycache__/*
 .ipynb_checkpoints/*
+temp:dspy-neural-symbolic-spatial-reasoning/*
+logs/*
