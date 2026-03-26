@@ -13,3 +13,15 @@ def str_to_dict(value):
 
     return parsed 
 
+
+    
+class Feedback(str):
+    def __new__(cls, path: str, error_msg: str | None = None):
+        with open(path, "r") as f:
+            content = f.read()
+        if error_msg: 
+            content = content.replace("$ERROR_MSG$", error_msg)
+        return super().__new__(cls, content)
+
+
+    

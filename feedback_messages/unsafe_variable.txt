@@ -1,0 +1,16 @@
+Your ASP program contains a grounding safety error. Error message:
+$ERROR_MSG$
+
+Common issues:
+
+- A variable appears in the rule head but is not bound in the body.
+  Example: foo(X, Y) :- bar(X).   % Y is unsafe
+- A variable is used in an arithmetic expression but not grounded first.
+  Example: :- assigned_name(H+1, peter).   % H is unbound
+- A variable appears only inside a negation-as-failure (not ...) with no
+  positive literal to bind it.
+  Example: :- not assigned_name(H, peter).   % H is unsafe
+
+Every variable must appear in at least one positive body literal before
+being used elsewhere. Please fix all unsafe variables and try again.
+Reply only the refined program and nothing else.

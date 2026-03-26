@@ -1,0 +1,19 @@
+Your ASP program is satisfiable but returned more than one answer set.
+This puzzle is guaranteed to have exactly one solution, so your encoding
+is missing or too weak in its constraints, leaving ambiguity.
+
+Common issues:
+
+- One or more clues were not encoded at all or were commented out.
+- A "directly left" clue was only encoded in one direction, leaving the
+  reverse unconstrained.
+  Example: encoding "arnold is left of water" but not "water is right of arnold"
+  as a single paired constraint.
+- A clue was encoded as a preference or weak constraint (e:g. using :~)
+  instead of a hard constraint (:-).
+- An existential clue was encoded correctly but does not eliminate all
+  alternative placements.
+
+Count your encoded clues and confirm each natural language clue maps to
+at least one :- constraint. The puzzle has exactly one valid solution.
+Reply only the refined program and nothing else.

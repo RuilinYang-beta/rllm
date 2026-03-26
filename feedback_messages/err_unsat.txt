@@ -1,0 +1,20 @@
+Your ASP program is syntactically correct but returned UNSATISFIABLE,
+meaning no solution exists under your current constraints. However, this
+puzzle is guaranteed to have exactly one solution, so your encoding has
+contradictory or overly strict constraints.
+
+Common issues:
+
+- A clue was encoded in the wrong direction or negated accidentally.
+  Example: :- assigned_name(2, peter).  instead of  :- not assigned_name(2, peter).
+- A "directly left" clue was encoded without accounting for boundary
+  houses where the neighbor doesn't exist.
+  Example: forcing house 3 to have a left neighbor at house 4.
+- Two clue constraints that are mutually exclusive given the puzzle facts.
+- A wrong constant name (e.g., `arnold` vs `arnoldd`) causing a clue to
+  reference a non-existent entity, making the constraint unsatisfiable.
+- Encoding a clue twice with conflicting interpretations.
+
+Go through each clue encoding one by one and verify it matches the
+natural language clue exactly. The puzzle has exactly one valid solution.
+Reply only the refined program and nothing else.

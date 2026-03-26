@@ -1,0 +1,19 @@
+Your ASP program contains a malformed aggregate or cardinality expression.
+Error message:
+$ERROR_MSG$
+
+Common issues:
+
+- Missing colon (:) between the bound variable and the condition inside
+  the aggregate.
+  Example (wrong):  #count { H, assigned_name(H, peter) } != 1.
+  Example (correct): #count { H : assigned_name(H, peter) } != 1.
+- Using a cardinality rule with wrong bound syntax.
+  Example (wrong):  1 { assigned_name(H, N) | name(N) } 1 :- house(H).
+  Example (correct): 1 { assigned_name(H, N) : name(N) } 1 :- house(H).
+- Placing the aggregate in the head without proper lower/upper bounds.
+- Nesting aggregates, which is not supported in ASP.
+
+Please check all #count, #sum, #min, #max and cardinality { } expressions
+for correct syntax and try again.
+Reply only the refined program and nothing else.

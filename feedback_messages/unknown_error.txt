@@ -1,0 +1,22 @@
+Your ASP program contains an error that could not be automatically classified.
+Error message:
+$ERROR_MSG$
+
+General checklist to diagnose the issue:
+
+- Syntax: Every rule, fact, and constraint must end with a period (.).
+  Check for missing periods, mismatched parentheses, and invalid characters.
+- Variable safety: Every variable must appear in at least one positive body
+  literal. Check that no variable is used only in the head or only inside
+  negation (not ...).
+- Predicate consistency: Check that every predicate name and arity used in
+  rules matches exactly what is declared in the facts.
+  Example: if you declared house/1, do not call house/2 anywhere.
+- Constraint consistency: Check that your constraints are not contradicting
+  each other or the declared facts, which would cause UNSATISFIABLE.
+- Aggregate syntax: Check that all #count, #sum, #min, #max and cardinality
+  { } expressions use a colon (:) as separator and have correct bounds.
+
+If the error message above contains a line number, start your inspection
+there. Fix all issues you can identify and try again.
+Reply only the refined program and nothing else.

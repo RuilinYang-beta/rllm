@@ -37,7 +37,7 @@ def load_dataset(path: str, template_path: str):
 def nesy():
     return Task(
         dataset=load_dataset(SAVE_PATH, TEMPLATE_NESY_PATH).filter(
-                lambda sample : sample.metadata["size"] == "3*4"
+                lambda sample : sample.metadata["size"] == "6*6"
             )[:1], # just one small sample for testing
                 
         # solver=chain(

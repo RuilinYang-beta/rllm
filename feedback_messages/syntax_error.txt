@@ -1,0 +1,10 @@
+Your ASP program contains syntax error(s). Error message: 
+$ERROR_MSG$
+
+Common issue: 
+
+- Missing periods (.) at end of facts/rules/queries.
+- Mismatched parentheses
+- Invalid predicate names (use letters, numbers, underscore only)
+
+Please check every line for proper ASP syntax and try again. Reply only the refined program and nothing else. 
