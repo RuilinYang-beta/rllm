@@ -6,7 +6,7 @@ from inspect_ai.scorer._metric import CORRECT, INCORRECT, Score
 from inspect_ai.scorer._scorer import Scorer, scorer 
 from inspect_ai.scorer._metrics import mean, stderr
 
-from utils import str_to_dict
+from utils import str_to_dict, to_lowercase, normalize
 
 
 # for dev purpose 
@@ -22,18 +22,26 @@ def dummy_scorer() -> Scorer:
     return score
 
 def max_cell_match_helper(ans_dict: dict, tar_dict: dict) -> Tuple[int, str]:
+    """
+    Be lenient as possible, without sacrificing the correctness comparison: 
+    (1) only care about the 'solution' part of the answer, ignore other parts like 'reasoning'
+    (2) lowercase the whole `ans_dict` and `tar_dict` 
+    (3) for each house, only care about the set of attribute values, ignore the attr names 
+    (4) in attr values, remove any space or underscore within a value 
+    """    
     total_match = 0
     explanation = ""
+
+    ans_dict = to_lowercase(ans_dict)
+    tar_dict = to_lowercase(tar_dict)
     
     for key in tar_dict['solution'].keys(): 
         if key not in ans_dict['solution']: 
             explanation = f"Key \"{key}\" missing, skip. \n{explanation}"
             continue
         
-        # be very lenient, the Attr name is not standardized, 
-        # don't penalize over that as long as the values are the same as a set
-        tar_set = set(tar_dict['solution'][key].values())
-        ans_set = set(ans_dict['solution'][key].values())
+        tar_set = {normalize(val) for val in tar_dict['solution'][key].values()}
+        ans_set = {normalize(val) for val in ans_dict['solution'][key].values()}
     
         cell_match = len(tar_set.intersection(ans_set))
         total_match += cell_match

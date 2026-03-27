@@ -81,7 +81,7 @@ async def validate_and_execute(program: str) -> tuple[bool, str, list | None]:
         result = await inspect_subprocess(
             ["python", "run_clingo.py"],
             input=program,
-            timeout=30,
+            timeout=300,
         )
     except TimeoutError:
         raise ClingoSubprocessError("Clingo subprocess timed out.")

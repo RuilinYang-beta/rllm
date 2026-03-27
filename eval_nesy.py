@@ -16,7 +16,9 @@ def nesy():
                 
         solver=[
             system_message(Content(SYSTEM_MESSAGE_PATH)),
+            # auto-refinement loop, each row invokes clingo in a subprocess 
             symbolic_solver(max_retries=3),
+            # format clingo stable model to JSON for scorer 
             format_solver(),
         ],
 
