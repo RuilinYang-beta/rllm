@@ -5,8 +5,3 @@ $PUZZLE$
 Generate an Answer Set Programming (ASP) program that corresponds to the above puzzle. The program should include facts, rules, and queries. The result of the query should answer each of the attributes of each house.
 
 Only reply the program with proper comments, do not include any formatting, code fences, or any text outside the program.
-
-
-
-
-
