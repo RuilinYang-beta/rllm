@@ -3,6 +3,6 @@ tests/__pycache__/*
 .ipynb_checkpoints/*
 analysis/.ipynb_checkpoints/*
 temp:dspy-neural-symbolic-spatial-reasoning/*
-logs/*
+# logs/*
 logs backup/*
 Untitled.ipynb

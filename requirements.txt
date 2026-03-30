@@ -1,0 +1,7 @@
+clingo==5.8.0
+datasets==4.8.4
+inspect_ai==0.3.200
+matplotlib==3.10.8
+numpy==2.4.4
+pandas==3.0.1
+python-dotenv==1.2.2
